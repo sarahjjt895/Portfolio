@@ -397,6 +397,7 @@ font-size: 1.2rem;
   display: flex; /* Use flexbox for container */
   flex-direction: column; /* Stack items vertically */
   justify-content: space-between; /* Space evenly between items */
+  height:60vh;
 }
 
 .web-development-overlay .white-box1 h3,
@@ -427,4 +428,77 @@ font-size: 1.2rem;
   font-size: 1.2rem;
   text-align: left;
   margin-bottom: 10px; /* Optional: Add margin between list items */
+}
+
+.web-development-overlay .white-section {
+  background-color: rgb(255, 255, 255);
+  width: 95%;
+  height: calc(100% - 60px); /* Adjust height to end before the bottom */
+  align-items: center; /* Center items vertically */
+  justify-content: center; /* Center items horizontally */
+  margin: 0 auto; /* Auto margin to center horizontally */
+  height: 15vh;
+}
+.web-development-overlay .white-section h2 {
+  font-size: 4rem;
+  font-weight: 400;
+  position: relative;
+}
+/* Container holding the background image and the white boxes */
+.background-image-container {
+  position: relative;
+  width: 100%;
+}
+
+.web-development-overlay .bg-image {
+  width: 100%; /* Ensure it takes up full width */
+  height: 100vh; /* Maintain aspect ratio */
+  z-index: 0; /* Ensure it is behind other content */
+}
+
+/* Styles for the new white boxes above the background image */
+.white-boxes-above-bg {
+  display: flex;
+  justify-content: space-around; /* Distribute space around the white boxes */
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  top: 10%; /* Adjust the top position as needed */
+  z-index: 1; /* Ensure it is above the background image */
+}
+
+.white-box-new1, .white-box-new2, .white-box-new3 {
+  background-color: white;
+  padding: 35px;
+  width: 30%; /* Adjust width as needed */
+  height: 80vh;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+  text-align: center; /* Center text horizontally */
+  box-sizing: border-box;
+}
+
+.white-box-new1 h3, .white-box-new2 h3, .white-box-new3 h3 {
+  font-size: 1.4em;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.white-box-new1 p, .white-box-new2 p, .white-box-new3 p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100; /* Light weight */
+  font-size: 1rem;
+}
+
+.white-box-new2 li, .white-box-new3 li {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100; /* Light weight */
+  font-size: 1rem;
+  text-align: left;
+  margin-bottom: 10px; /* Optional: Add margin between list items */
+}
+
+.white-box-new2 ul, .white-box-new3 ul {
+  list-style-position: outside; /* Ensure the bullet points are outside the list items */
+  padding-left: 30px; /* Adjust padding as needed */
+  flex: 1; /* Distribute remaining space evenly */
 }
