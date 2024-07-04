@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sarah JJ Taylor</title>
+  <link href="styles.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Varela+Round:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+
+  
+</head>
+<body>
+  <div class="page-header">
+    <div class="logo">
+      <p>Sarah JJ Taylor</p>
+    </div>
+    <div class="nav-bar">
+      <a href="#" class="active">Home</a>
+      <a href="#">Work</a>
+      <a href="#">About Me</a>
+      <a href="#">Resume</a>
+      <a href="#">Contact</a>
+    </div>
+    <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <div class="header-content">
+    <div class="image-container">
+      <img src="Header1.jpg" alt="Header 1">
+      <div class="image-overlay">
+        <div class="overlay-text">
+          <p>UX UI DESIGNER & FRONT END DEVELOPER</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section id="home">
+    <h2>Welcome</h2>
+    <p>Hello! I'm Sarah, a front-end developer with a passion for transforming data into cutting-edge, impeccably crafted interfaces. Originally from Tilpa, a small sheep and cattle farm town (in the middle of nowhere), I eventually made my way to the beautiful city of Sydney, where I've lived for the past 10 years.</p>
+  </section>
+
+  <section id="work">
+    <div class="gallery">
+      <div class="gallery-item">
+        <img src="image1.jpg" alt="Artwork 1">
+        <div class="overlay" onclick="openWebDevelopmentOverlay()">
+          <p class="overlay-text">Web Development</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="image2.jpg" alt="Artwork 2">
+        <div class="overlay">
+          <p class="overlay-text">UX & UI Design</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="image3.jpg" alt="Artwork 3">
+        <div class="overlay">
+          <p class="overlay-text">3D Modelling & Animation</p>
+        </div>
+      </div>
+      <div class="gallery-item">
+        <img src="image4.jpg" alt="Artwork 4">
+        <div class="overlay">
+          <p class="overlay-text">Visual Communication</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>Download my resume <a href="resume.pdf" download>here</a>.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form id="contactForm">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>
+
+  <!-- New overlay for Web Development -->
+  <div id="webDevelopmentOverlay" class="web-development-overlay" style="display: none;">
+    <div class="overlay-content">
+      <div class="grey-section1">
+        <div class="white-box">
+          <h3>RunWise | Run Tracking Application</h3>
+          <p>Developed to provide runners a comprehensive platform for tracking, analyzing, and enhancing their performance. Integrating tracking metrics that allow the user to set their goals and provide insights on their daily, weekly and monthly accomplishments. </p>
+        </div>
+        <img src="MacMockup.png" alt="Mac Mockup">
+      </div>
+      <button onclick="closeWebDevelopmentOverlay()">X</button>
+      <div class="grey-section2">
+          <div class="white-box1">
+            <h3>The Problem
+            </h3>
+            <p>Many running apps fail to fully meet the needs of avid runners, often lacking in customization, personalized feedback, and engaging features. Most current solutions provide basic tracking and goal-setting functionalities but fall short in delivering tailored insights or motivating content.
+            </p>
+            <br>
+            <p>
+              Runners are often left to settle for “good enough” rather than an app that truly enhances their training and performance.</p>
+          </div>
+          <div class="white-box2">
+            <h3>The Solution</h3>
+            <ul>
+            <li>Dynamically tailored training plans that adapt based on individual performance data and progress.</li>
+
+            <li>Advanced Performance Insights that provide In-depth analysis and feedback on running form and efficiency.</li>
+              
+              <li>Dynamic Goals that adjust based on user progress to keep motivation high.</li>
+              
+              <li>Intuitive User Interface with seamless navigation and use across all devices.</li>
+            </ul>
+          </div>
+    </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  <footer>
+    <p>&copy; 2024 Sarah JJ Taylor. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
