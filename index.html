@@ -9,11 +9,7 @@
   <link href="styles.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css2?family=Varela+Round:wght@700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
-
-
 </head>
 
 <body>
@@ -28,9 +24,20 @@
       <a href="#">Resume</a>
       <a href="#">Contact</a>
     </div>
-    <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
-      <i class="fa fa-bars"></i>
-    </a>
+    <div class="burger-menu">
+      <!-- Burger Menu Icon (can be an image or using CSS for icon) -->
+      <img src="BurgerMenu.png" alt="Burger Menu">
+    </div>
+  </div>
+
+  <!-- Overlay for Burger Menu -->
+  <div class="burgeroverlay" id="burgeroverlay">
+    <div class="burgeroverlay-content">
+      <a href="#">Work</a>
+      <a href="#">About Me</a>
+      <a href="#">Resume</a>
+      <a href="#">Contact</a>
+    </div>
   </div>
 
   <div class="header-content">
@@ -152,7 +159,10 @@
             <p>In recent years, the popularity of fitness tracking apps has surged. As of 2023, there are over 300,000
               health and fitness apps available on major platforms, compared to just 100,000 in 2018. This significant
               growth highlights a growing interest in health and wellness. Research shows that 80% of smartphone users
-              have downloaded at least one health or fitness app, with 50% using them regularly. Among these, running
+              have downloaded at least one health or fitness app, with 50% using them regularly.
+            </p>
+            <br>
+            <p>Among these, running
               apps have seen a substantial increase, with users seeking to monitor their performance, set goals, and
               improve their overall fitness.</p>
           </div>
@@ -186,7 +196,7 @@
             <p>To gain deeper insights into the needs and preferences of runners, I conducted one-on-one interviews with
               5 regular users of running apps. Additionally, I distributed a survey to 51 participants to validate these
               insights on a larger scale. Key findings from this research include:</p>
-              <BR>
+            <BR>
             <ul>
               <li>Users value detailed performance tracking but want more personalized insights and recommendations
                 based on their data.</li>
@@ -196,10 +206,48 @@
 
               <li>There is a strong demand for customizable training plans and the ability to tailor the app to
                 individual needs and preferences.</li>
-              </ul>
+            </ul>
           </div>
         </div>
       </div>
+
+      <div class="white-section2">
+        <h2>What would elevate your experience?</h2>
+        <div class="flex-container">
+          <img src="Graph.png" alt="Graph" class="graph-image">
+          <div class="white-box3">
+            <p>
+              I identified three key enhancements during my one-on-one interviews, which were later validated through
+              surveys where participants could also suggest additional features. This process revealed five preferred
+              features for a runner's app, with detailed performance tracking emerging as the most favored, followed by
+              improved goal setting and personalized plans tailored to individual user needs.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="grey-section3">
+        <h2> Problem Statement</h2>
+        <p>
+          As a seasoned runner, I want enhanced features for detailed performance tracking, improved goal setting, and
+          tailored plans to better meet my individual running needs, thereby enabling me to achieve my fitness goals
+          effectively and enjoy a more personalized running experience.
+        </p>
+      </div>
+      <div class="wireframe-container">
+        <div class="white-box4">
+<h2> Wireframe Prototype</h2>
+<p> The initial prototype was designed with Balsamiq having the user flow in mind. The landing page allowed for a clear interface, only providing the most essential data.
+</p>
+<br>
+<ul></ul>
+  <li> Performance Breakdown displays the key data input for the based on the users goals.</li>
+  <li>Performance Overview chart displays the user data percentages. </li>
+    <li>User overlay screens include logging data for run session (distance, durations etc.), as well as providing mood insights after run completion.</li>
+      <li>Once complete, user data is populated on the home screen.</li>
+    </ul>
+    </div>
+    <img src="DataModel.png" alt="Data Model" class="data-model">
+        </div>
     </div>
   </div>
   </div>
