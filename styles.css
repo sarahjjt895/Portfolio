@@ -19,17 +19,17 @@ body {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 10%;
+  z-index: 1000;
+  /* Ensure header is above other content */
+  position: fixed;
   top: 0;
   left: 0;
-  z-index: 1000;
-  position: fixed;
 }
 
 .logo {
   color: rgb(46, 46, 46);
   font-size: 2.5rem;
-  margin-left: 20px; /* Adjust margin as needed */
+  margin-left: 20px;
 }
 
 .nav-bar {
@@ -45,17 +45,97 @@ body {
   font-size: 1.2rem;
 }
 
-.menu-icon {
-  color: white;
-  cursor: pointer;
+.burger-menu {
   display: none;
-  margin-right: 20px; /* Adjust margin as needed */
+  /* Initially hide the burger menu */
+  cursor: pointer;
+  margin-right: 40vw;
+  /* Adjust margin as needed */
+  margin-bottom: 5vh;
+  height: 1vh;
+  width: 1vw;
 }
 
-/* Header content styles */
-.header-content {
-  position: relative;
+@media (max-width: 500px) {
+  .nav-bar {
+    display: none;
+    /* Hide navigation links on small screens */
+  }
+
+  .burger-menu {
+    display: block;
+    /* Show burger menu icon */
+  }
+
+  .image-container {
+    margin-top: 30vw;
+    height: 18vh;
+  }
+  .image-container img {
+    height: 20vh;
+  }
+
+
+  .overlay-text p {
+    font-size: 0.8rem !important; /* Force the font size */
+    color: #ffffff; /* Add color for visibility */
+  }
+
+  .image-overlay {
+    align-items: center;
+   height: 80% !important;
+  
+  }
+}
+
+
+.burgeroverlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  /* Adjust opacity and color as needed */
+  z-index: 999;
+  /* Ensure burger overlay is above other content */
+  display: none;
+}
+
+.burgeroverlay.active {
+  display: block;
+  /* Show burger overlay when active */
+}
+
+.burgeroverlay-content {
+  position: absolute;
+  top: 30%;
+  /* Adjust vertical position as needed */
+  left: 50%;
+  /* Adjust horizontal position as needed */
+  transform: translate(-50%, -50%);
   width: 100%;
+  text-align: center;
+}
+
+.burgeroverlay-content a {
+  display: block;
+  padding: 20px;
+  font-size: 3rem;
+  color: white;
+  text-decoration: none;
+  margin-right: 50px;
+}
+
+.burgeroverlay-content a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (min-width: 500px) {
+  .burger-menu {
+    display: none;
+    /* Hide burger menu on larger screens */
+  }
 }
 
 .image-container {
@@ -72,55 +152,79 @@ body {
 /* Image overlay styles */
 .image-overlay {
   position: absolute;
-  top: 50%; /* Center vertically */
-  left: 6%; /* Adjust left position */
-  transform: translateY(-50%); /* Center vertically */
-  background-color: rgba(255, 255, 255, 0); /* Transparent middle */
-  border: 2px solid white; /* White border */
-  width: 15%; /* Fixed width */
-  height: 45%; /* Fixed height */
+  top: 50%;
+  /* Center vertically */
+  left: 6%;
+  /* Adjust left position */
+  transform: translateY(-50%);
+  /* Center vertically */
+  background-color: rgba(255, 255, 255, 0);
+  /* Transparent middle */
+  border: 2px solid white;
+  /* White border */
+  width: 15%;
+  /* Fixed width */
+  height: 45%;
+  /* Fixed height */
   display: flex;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  z-index: 2; /* Ensure above the image */
+  z-index: 2;
+  /* Ensure above the image */
 }
 
 .overlay-text {
-  color: rgb(255, 255, 255); /* Adjust text color */
-  font-size: 1.5rem; /* Adjust text size as needed */
-  text-align: center; /* Center text */
-  padding: 10px; /* Add some padding */
+  color: rgb(255, 255, 255);
+  /* Adjust text color */
+  font-size: 2.7rem;
+  /* Adjust text size as needed */
+  text-align: center;
+  /* Center text */
+  padding: 10px;
+  /* Add some padding */
   letter-spacing: 2px;
 }
 
 .overlay-text h2 {
-  color: rgb(255, 255, 255); /* Adjust heading text color */
-  font-size: 2.5rem; /* Heading font size */
-  margin-bottom: 10px; /* Adjust spacing */
+  color: rgb(255, 255, 255);
+  /* Adjust heading text color */
+  font-size: 2.5rem;
+  /* Heading font size */
+  margin-bottom: 10px;
+  /* Adjust spacing */
 }
 
 .overlay-text p {
-  font-size: 1.5rem; /* Paragraph font size */
+  font-size: 1.5rem;
+  /* Paragraph font size */
 }
+
 .gallery {
   display: flex;
-  justify-content: center; /* Center the gallery in the middle of the page */
-  gap: 20px; /* Add some space between gallery items */
-  flex-direction: column; /* Stack items vertically */
+  justify-content: center;
+  /* Center the gallery in the middle of the page */
+  gap: 20px;
+  /* Add some space between gallery items */
+  flex-direction: column;
+  /* Stack items vertically */
   align-items: center;
 }
 
 .gallery-item {
-  flex: 0 0 auto; /* Prevents flex items from growing or shrinking */
-  width: 60vw; /* Fixed width for all images */
+  flex: 0 0 auto;
+  /* Prevents flex items from growing or shrinking */
+  width: 60vw;
+  /* Fixed width for all images */
   overflow: hidden;
   position: relative;
 }
 
 .gallery-item img {
-  width: 100%; /* Ensure the image takes the full width of the gallery item */
-  height: auto; /* Maintain aspect ratio */
+  width: 100%;
+  /* Ensure the image takes the full width of the gallery item */
+  height: auto;
+  /* Maintain aspect ratio */
   display: block;
 }
 
@@ -130,13 +234,15 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Adjust transparency as needed */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Adjust transparency as needed */
   opacity: 0;
   transition: opacity 0.3s ease;
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 1; /* Ensure overlay is above the image */
+  z-index: 1;
+  /* Ensure overlay is above the image */
 }
 
 .gallery-item:hover .overlay {
@@ -200,59 +306,76 @@ section {
 
 
 #home {
-  width: 62%; /* Adjusted width for the home section */
-  margin: 0 auto; /* Center horizontally */
-  text-align: left; /* Align text to the left */
+  width: 62%;
+  /* Adjusted width for the home section */
+  margin: 0 auto;
+  /* Center horizontally */
+  text-align: left;
+  /* Align text to the left */
 }
 
 #home .image-container {
-  width: 30%; /* Adjusted width for the image container */
+  width: 30%;
+  /* Adjusted width for the image container */
 }
 
 #home .image-container img {
-  width: 30%; /* Ensure image takes full width of its container */
-  max-width: 30%; /* Limit image width to prevent overflow */
-  height: auto; /* Maintain aspect ratio */
+  width: 30%;
+  /* Ensure image takes full width of its container */
+  max-width: 30%;
+  /* Limit image width to prevent overflow */
+  height: auto;
+  /* Maintain aspect ratio */
 }
 
 #home h2 {
   font-size: 4rem;
   margin-bottom: 20px;
   font-weight: 400;
-  padding-right: 35vw; /* Add padding to move it 20vw from the left */
+  padding-right: 35vw;
+  /* Add padding to move it 20vw from the left */
 }
 
 #home p {
   font-size: 1.2rem;
   line-height: 1.6;
   font-family: 'Roboto', sans-serif;
-  font-weight: 50; /* Light weight */
-  padding-right: 35vw; /* Add padding to move it 20vw from the left */
+  font-weight: 50;
+  /* Light weight */
+  padding-right: 35vw;
+  /* Add padding to move it 20vw from the left */
   width: 85vw;
 }
 
 /* Responsive styles */
 @media screen and (max-width: 768px) {
   .image-overlay {
-    width: 150px; /* Adjust width for smaller screens */
-    height: 150px; /* Adjust height for smaller screens */
+    width: 150px;
+    /* Adjust width for smaller screens */
+    height: 150px;
+    /* Adjust height for smaller screens */
   }
 
   .overlay-text {
-    font-size: 1rem; /* Adjust font size for smaller screens */
+    font-size: 1rem;
+    /* Adjust font size for smaller screens */
   }
 
   .logo {
-    font-size: 2rem; /* Adjust font size for smaller screens */
+    font-size: 2rem;
+    /* Adjust font size for smaller screens */
   }
 
   .nav-bar a {
-    font-size: 1rem; /* Adjust font size for smaller screens */
-    padding: 1rem; /* Adjust padding for smaller screens */
+    font-size: 1rem;
+    /* Adjust font size for smaller screens */
+    padding: 1rem;
+    /* Adjust padding for smaller screens */
   }
 
   #home {
-    width: 50%; /* Adjust width for smaller screens */
+    width: 50%;
+    /* Adjust width for smaller screens */
   }
 
   #home h2 {
@@ -271,60 +394,80 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Semi-transparent black */
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 1000; /* Ensure above other content */
-  overflow: hidden; /* Prevent underlying content from scrolling */
+  z-index: 1000;
+  /* Ensure above other content */
+  overflow: hidden;
+  /* Prevent underlying content from scrolling */
 }
 
 .web-development-overlay .overlay-content {
   background-color: white;
   width: 80vw;
-  max-height: 80vh; /* Adjust max height as needed */
-  overflow: auto; /* Enable scrolling within the overlay */
-  padding: 0px; /* Adjust padding as needed */
+  max-height: 80vh;
+  /* Adjust max height as needed */
+  overflow: auto;
+  /* Enable scrolling within the overlay */
+  padding: 0px;
+  /* Adjust padding as needed */
   text-align: center;
-  position: relative; /* Relative positioning for absolute button */
+  position: relative;
+  /* Relative positioning for absolute button */
 }
 
 
 .web-development-overlay .grey-section1 {
   background-color: rgb(207, 207, 207);
   width: 100%;
-  height: calc(100% - 60px); /* Adjust height to end before the bottom */
+  height: calc(100% - 60px);
+  /* Adjust height to end before the bottom */
   display: flex;
-  align-items: center; /* Center items vertically */
-  padding: 70px; /* Adjust padding as needed */
+  align-items: center;
+  /* Center items vertically */
+  padding: 70px;
+  /* Adjust padding as needed */
   box-sizing: border-box;
 }
 
 .web-development-overlay .white-box {
   background-color: white;
-  padding: 80px; /* Adjust padding as needed */
-  width:40vw;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
-  max-width: 50%; /* Adjust max width as needed */
+  padding: 80px;
+  /* Adjust padding as needed */
+  width: 40vw;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Optional: Add shadow for better visibility */
+  max-width: 50%;
+  /* Adjust max width as needed */
   height: auto;
-  text-align: left; /* Align text to the left */
+  text-align: left;
+  /* Align text to the left */
 }
+
+
 
 .web-development-overlay .grey-section1 img {
-  max-width: 50%; /* Adjust max width of the image */
-  height: auto; /* Maintain aspect ratio */
-  margin-left: auto; /* Push the image to the right */
+  max-width: 50%;
+  /* Adjust max width of the image */
+  height: auto;
+  /* Maintain aspect ratio */
+  margin-left: auto;
+  /* Push the image to the right */
 }
 
-.web-development-overlay .white-box h3{
+.web-development-overlay .white-box h3 {
   font-size: 1.8rem;
   font-weight: 400;
 
 }
 
-.web-development-overlay .white-box p{
-font-family: 'Roboto', sans-serif;
-  font-weight: 100; /* Light weight */
+.web-development-overlay .white-box p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  /* Light weight */
 }
 
 .web-development-overlay h2 {
@@ -339,25 +482,32 @@ font-family: 'Roboto', sans-serif;
   font-size: 1.2rem;
   line-height: 1.6;
   font-family: 'Roboto', sans-serif;
-  font-weight: 100; /* Light weight */
+  font-weight: 100;
+  /* Light weight */
 }
 
 
 .web-development-overlay button {
-  width: 50px; /* Adjust width and height to make it circular */
+  width: 50px;
+  /* Adjust width and height to make it circular */
   height: 50px;
   background-color: rgba(0, 0, 0, 0);
-  border: 2px solid rgb(255, 255, 255); /* White border */
-  border-radius: 50%; /* Ensure it's circular */
+  border: 2px solid rgb(255, 255, 255);
+  /* White border */
+  border-radius: 50%;
+  /* Ensure it's circular */
   color: white;
   cursor: pointer;
   margin-top: 20px;
-  position: absolute; /* Absolute positioning */
-  right: 20px; /* Align to the right */
-top: 1px;
-font-family: 'Varela Round', sans-serif; /* Use Varela Round */
-font-weight: 700;
-font-size: 1.2rem;
+  position: absolute;
+  /* Absolute positioning */
+  right: 20px;
+  /* Align to the right */
+  top: 1px;
+  font-family: 'Varela Round', sans-serif;
+  /* Use Varela Round */
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .web-development-overlay button:hover {
@@ -374,14 +524,20 @@ font-size: 1.2rem;
 .web-development-overlay .grey-section2 {
   background-color: rgb(207, 207, 207);
   width: 95%;
-  height: calc(100% - 60px); /* Adjust height to end before the bottom */
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
-  margin: 0 auto; /* Auto margin to center horizontally */
+  height: calc(100% - 60px);
+  /* Adjust height to end before the bottom */
+  align-items: center;
+  /* Center items vertically */
+  justify-content: center;
+  /* Center items horizontally */
+  margin: 0 auto;
+  /* Auto margin to center horizontally */
   box-sizing: border-box;
   display: flex;
-  justify-content: space-between; /* Space between the two boxes */
-  padding: 80px 90px; /* Add padding to the left and right */
+  justify-content: space-between;
+  /* Space between the two boxes */
+  padding: 80px 90px;
+  /* Add padding to the left and right */
   margin-top: 40px;
 }
 
@@ -389,15 +545,25 @@ font-size: 1.2rem;
 .web-development-overlay .white-box1,
 .web-development-overlay .white-box2 {
   background-color: white;
-  padding: 30px; /* Adjust padding as needed */
-  width: 40%; /* Each box takes up 40% of the grey-section2 */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
-  text-align: center; /* Center text horizontally */
+  padding: 30px;
+  /* Adjust padding as needed */
+  width: 40%;
+  /* Each box takes up 40% of the grey-section2 */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Optional: Add shadow for better visibility */
+  text-align: center;
+  /* Center text horizontally */
   box-sizing: border-box;
-  display: flex; /* Use flexbox for container */
-  flex-direction: column; /* Stack items vertically */
-  justify-content: space-between; /* Space evenly between items */
-  height:60vh;
+  display: flex;
+  /* Use flexbox for container */
+  flex-direction: column;
+  /* Stack items vertically */
+  justify-content: space-between;
+  /* Space evenly between items */
+  min-height: 60vh;
+  /* Ensure both boxes have at least 60vh height */
+  height: auto;
+  /* Allow height to adjust based on content */
 }
 
 .web-development-overlay .white-box1 h3,
@@ -410,40 +576,75 @@ font-size: 1.2rem;
 .web-development-overlay .white-box1 p,
 .web-development-overlay .white-box2 p {
   font-family: 'Roboto', sans-serif;
-  font-weight: 100; /* Light weight */
+  font-weight: 100;
+  /* Light weight */
   font-size: 1.2rem;
-  flex: 1; /* Distribute remaining space evenly */
-  margin-bottom: 10px; /* Optional: Add margin between paragraphs */
+  flex: 1;
+  /* Distribute remaining space evenly */
+  margin-bottom: 10px;
+  /* Optional: Add margin between paragraphs */
 }
 
 .web-development-overlay .white-box2 ul {
-  list-style-position: outside; /* Ensure the bullet points are outside the list items */
-  padding-left: 30px; /* Adjust padding as needed */
-  flex: 1; /* Distribute remaining space evenly */
+  list-style-position: outside;
+  /* Ensure the bullet points are outside the list items */
+  padding-left: 30px;
+  /* Adjust padding as needed */
+  flex: 1;
+  /* Distribute remaining space evenly */
 }
 
 .web-development-overlay .white-box2 li {
   font-family: 'Roboto', sans-serif;
-  font-weight: 100; /* Light weight */
+  font-weight: 100;
+  /* Light weight */
   font-size: 1.2rem;
   text-align: left;
-  margin-bottom: 10px; /* Optional: Add margin between list items */
+  margin-bottom: 10px;
+  /* Optional: Add margin between list items */
 }
 
 .web-development-overlay .white-section {
   background-color: rgb(255, 255, 255);
   width: 95%;
-  height: calc(100% - 60px); /* Adjust height to end before the bottom */
-  align-items: center; /* Center items vertically */
-  justify-content: center; /* Center items horizontally */
-  margin: 0 auto; /* Auto margin to center horizontally */
+  height: calc(100% - 60px);
+  /* Adjust height to end before the bottom */
+  align-items: center;
+  /* Center items vertically */
+  justify-content: center;
+  /* Center items horizontally */
+  margin: 0 auto;
+  /* Auto margin to center horizontally */
   height: 15vh;
 }
+
 .web-development-overlay .white-section h2 {
   font-size: 4rem;
   font-weight: 400;
   position: relative;
 }
+
+:root {
+  /* Define base sizes and scaling factors */
+  --base-bg-height: 115vh;
+  --base-box-height: 95vh;
+  --scaling-factor: 0.05;
+  /* Adjust this value to control the scaling rate */
+}
+
+:root {
+  /* Define base sizes and scaling factors */
+  --base-bg-height: 115vh;
+  --base-box-height: 95vh;
+  --scaling-factor: 0.03;
+  /* Adjust this value to control the scaling rate */
+  --base-font-size: 1rem;
+  --min-font-size: 0.9rem;
+  /* Set the minimum font size */
+  --scaling-font-factor: 0.02;
+  /* Adjust this value to control the font scaling rate */
+}
+
 /* Container holding the background image and the white boxes */
 .background-image-container {
   position: relative;
@@ -451,54 +652,266 @@ font-size: 1.2rem;
 }
 
 .web-development-overlay .bg-image {
-  width: 100%; /* Ensure it takes up full width */
-  height: 100vh; /* Maintain aspect ratio */
-  z-index: 0; /* Ensure it is behind other content */
+  width: 100%;
+  /* Ensure it takes up full width */
+  height: calc(var(--base-bg-height) + var(--scaling-factor) * (100vw - 1600px));
+  /* Adjust height based on viewport width */
+  z-index: 0;
+  /* Ensure it is behind other content */
 }
 
 /* Styles for the new white boxes above the background image */
 .white-boxes-above-bg {
   display: flex;
-  justify-content: space-around; /* Distribute space around the white boxes */
+  justify-content: space-around;
+  /* Distribute space around the white boxes */
   align-items: center;
   position: absolute;
   width: 100%;
-  top: 10%; /* Adjust the top position as needed */
-  z-index: 1; /* Ensure it is above the background image */
+  top: 10%;
+  /* Adjust the top position as needed */
+  z-index: 1;
+  /* Ensure it is above the background image */
 }
 
-.white-box-new1, .white-box-new2, .white-box-new3 {
+.white-box-new1,
+.white-box-new2,
+.white-box-new3 {
   background-color: white;
   padding: 35px;
-  width: 30%; /* Adjust width as needed */
-  height: 80vh;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
-  text-align: center; /* Center text horizontally */
+  width: 30%;
+  /* Adjust width as needed */
+  height: calc(var(--base-box-height) + var(--scaling-factor) * (100vw - 1600px));
+  /* Adjust height based on viewport width */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Optional: Add shadow for better visibility */
+  text-align: center;
+  /* Center text horizontally */
   box-sizing: border-box;
 }
 
-.white-box-new1 h3, .white-box-new2 h3, .white-box-new3 h3 {
-  font-size: 1.4em;
+.white-box-new1 h3,
+.white-box-new2 h3,
+.white-box-new3 h3 {
+  font-size: min(calc(var(--base-font-size) + var(--scaling-font-factor) * (100vw - 1600px)), var(--min-font-size));
+  /* Adjust font size based on viewport width with a minimum size */
+  font-size: 1.3rem;;
   font-weight: 400;
   margin-bottom: 10px;
 }
 
-.white-box-new1 p, .white-box-new2 p, .white-box-new3 p {
+.white-box-new1 p,
+.white-box-new2 p,
+.white-box-new3 p,
+.white-box-new2 li,
+.white-box-new3 li {
   font-family: 'Roboto', sans-serif;
-  font-weight: 100; /* Light weight */
-  font-size: 1rem;
-}
-
-.white-box-new2 li, .white-box-new3 li {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 100; /* Light weight */
-  font-size: 1rem;
+  font-weight: 100;
+  /* Light weight */
+  font-size: min(calc(var(--base-font-size) + var(--scaling-font-factor) * (100vw - 1600px)), var(--min-font-size));
+  /* Adjust font size based on viewport width with a minimum size */
   text-align: left;
-  margin-bottom: 10px; /* Optional: Add margin between list items */
+  margin-bottom: 10px;
+  /* Optional: Add margin between list items */
 }
 
-.white-box-new2 ul, .white-box-new3 ul {
-  list-style-position: outside; /* Ensure the bullet points are outside the list items */
-  padding-left: 30px; /* Adjust padding as needed */
-  flex: 1; /* Distribute remaining space evenly */
+.white-box-new2 ul,
+.white-box-new3 ul {
+  list-style-position: outside;
+  /* Ensure the bullet points are outside the list items */
+  padding-left: 30px;
+  /* Adjust padding as needed */
+  flex: 1;
+  /* Distribute remaining space evenly */
+}
+
+.white-section2 {
+  padding: 20px;
+}
+
+.white-section2 h2 {
+  text-align: right;
+  margin-left: 40%;
+  margin-right: 10%;
+}
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.graph-image {
+  height: 50%;
+  width: 50%;
+  flex-shrink: 0;
+  margin-left: 5%;
+}
+
+.web-development-overlay .white-box3 {
+  background-color: white;
+  padding: 40px;
+  margin-right: 5%;
+  width: 90vw;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.253);
+  max-width: 100%;
+  height: auto;
+  text-align:center;
+  margin-left: 5%;
+}
+
+.grey-section3 {
+  background-color: rgb(207, 207, 207);
+  padding: 40px; 
+  margin: 0 auto;
+  width: 50%;
+}
+
+.wireframe-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+}
+
+.data-model {
+  height:50%;
+  width:50%;
+  opacity: 0;
+  transform: translateX(100%); /* Start off-screen to the right */
+  transition: opacity 5s ease-out, transform 5s ease-out;
+}
+
+.data-model.in-view {
+  opacity: 1;
+  transform: translateX(0); /* Move to the final position */
+}
+
+.white-box4 {
+  margin-left: 5%;
+  width: 70%;
+}
+
+.white-box4 p{
+  text-align: left;
+}
+.white-box4 li {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 50;
+  text-align: left;
+  margin-bottom: 10px;
+  /* Light weight */
+}
+
+.white-box4 ul {
+  list-style-position: outside;
+  /* Ensure the bullet points are outside the list items */
+  padding-left: 60px;
+  /* Adjust padding as needed */
+  flex:1;
+}
+
+/* Media query for screens less than 1600px */
+@media (min-width: 1500px) {
+
+  /* Adjust base sizes for smaller screens */
+  :root {
+    --base-bg-height: 120vh;
+    --base-box-height: 103vh;
+    --min-font-size: 1.5rem;
+  }
+}
+
+/* Media query for screens less than 1400px */
+@media (max-width: 1400px) {
+  :root {
+    --base-bg-height: 95vh;
+    --base-box-height: 80vh;
+    --base-font-size: 0.9rem;
+    --scaling-font-factor: 0.005;
+    --min-font-size: 1rem;
+    /* Adjust the minimum font size for this screen size */
+  }
+}
+
+/* Media query for screens less than 1200px */
+@media (max-width: 1200px) {
+  :root {
+    --base-bg-height: 100vh;
+    --base-box-height: 85vh;
+    --base-font-size: 0.8rem;
+    --scaling-font-factor: 0.002;
+    --min-font-size: 0.75rem;
+    /* Ensure minimum font size is consistent */
+  }
+}
+
+/* Media query for screens less than 1000px */
+@media (max-width: 1000px) {
+  :root {
+    --base-bg-height: 90vh;
+    --base-box-height: 80vh;
+    --base-font-size: 0.7rem;
+    --scaling-font-factor: 0.002;
+    --min-font-size: 0.9rem;
+    /* Ensure minimum font size is consistent */
+  }
+}
+
+@media (max-width: 430px) {
+
+  .web-development-overlay .overlay-content,
+  .web-development-overlay .grey-section1,
+  .web-development-overlay .grey-section2,
+  .web-development-overlay .white-section .web-development-overlay .grey-section1 img {
+    width: 100%;
+    /* Full width on smaller screens */
+    max-width: 100%;
+    /* Max width is full width */
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 5vw;
+  }
+
+  .web-development-overlay .grey-section1 img {
+    height: auto;
+    max-width: 100%;
+  }
+
+  .web-development-overlay .white-box,
+  .web-development-overlay .white-box1,
+  .web-development-overlay .white-box2,
+  .white-boxes-above-bg,
+  .white-box-new1,
+  .white-box-new2,
+  .white-box-new3 {
+    width: 90%;
+    /* Adjust width for smaller screens */
+    max-width: 100%;
+    /* Max width is full width */
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .white-boxes-above-bg {
+    padding-left: 10vw;
+  }
+
+  .white-box-new1,
+  .white-box-new2,
+  .white-box-new3 {
+    align-items: center;
+    height: auto;
+
+  }
+
+  .web-development-overlay {
+    width: 90%
+  }
+
+  .web-development-overlay .bg-image {
+    height: 180vh;
+  }
 }
