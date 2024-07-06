@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
@@ -20,7 +21,88 @@
     <div class="nav-bar">
       <a href="#" class="active">Home</a>
       <a href="#">Work</a>
-      <a href="#">About Me</a>
+      <a href="#" onclick="openaboutMeOverlay()">About Me</a>
+
+      <!-- New overlay for About Me -->
+      <div id="aboutMeOverlay" class="about-me-overlay" style="display: none;">
+        <div class="about-me-content">
+          <button onclick="closeaboutMeOverlay()">X</button>
+          <div class="grey-section1">
+            <img src="AboutMe.png" alt="about-me" class="aboutMe">
+            <div class="white-box4">
+              <h2>Hello,</h2>
+              <br>
+              <p>
+                My name is Sarah, and I'm a UX/UI designer and front-end developer based in Sydney, Australia.
+              </p>
+              <br>
+              <p>
+                I began my academic path after moving to Sydney, where I completed a Diploma of Interior Design &
+                Decoration. Initially, I aimed to enter the world of architecture and design, but life had other plans.
+                Drawn to the tech world, I taught myself to code and started creating prototypes and mockups of apps and
+                web pages. This newfound passion led me to pursue a Bachelor of Design Computing at the University of
+                Sydney where I was able to turn ideas into reality from user research through to concept and later to
+                high fidelity prototypes.
+              </p>
+            </div>
+          </div>
+          <div class="grey-section">
+            <div class="white-box5">
+              <h2>A little bit of background...</h2>
+
+              <br>
+              <p>Since I can remember, I've always had a passion for creating and developing ideas. As a child, I
+                enjoyed sketching and painting, and now, I design products for public consumption. During the pandemic,
+                I
+                learned to sew on my grandma's Elna. Inspired, I bought one for myself and began creating reusable
+                fabric masks in custom designs. I advertised them and made them to order, to the point where strangers
+                would ask where they were from when passing by, and make an order.</p>
+              <br>
+              <p>Recently, I launched my own Etsy store, where I sell a variety of designs, from pillows to printable
+                event templates. Creativity is in my DNA, and I can't help but seek unmatched attention to detail in
+                everything I make; I can demonstrate extensive patience when it comes to refining an idea. </p>
+              <br>
+              <p>I'm deeply fascinated with all aspects of the user experience, user research, user journey mapping, and
+                visual design. I advocate for the user, ensuring that products meet their needs and are easy to use. My
+                background in varied professional environments, as well as diverse lifestyle settings has allowed me to
+                connect and understand users in a empathetic way, where I'm able to gain deep insights and user needs,
+                leaving no stone unturned.</p>
+              <br>
+              <p>I am disciplined in a wide range of technical skills ranging from developing the front and back end of
+                the website, prototyping with Balsamiq and Figma, and rendering illustrations and animations with Adobe
+                PS,
+                Illustrator, AfterEffects and too many more to mention.</p>
+            </div>
+          </div>
+            <h2>Personal Projects</h2>
+            <br>
+            <p>I've developed a number of personal "side" projects over the years, including an Etsy store, creating and
+              selling masks, interior design projects and some drawing and painting in my spare time. It brings me great
+              joy and satisfaction to devise an idea, then bring it to life (and if people like my designs as much as I
+              do, its an added bonus!). Feel free to peep my Etsy store if its something that might interest you.
+            </p>
+            <div class="button-container">
+              <a href="https://janejeffreysco.etsy.com" class="etsy-button">My Etsy Store</a>
+            </div>
+          </div>
+          <div class="grey-section">
+            <div class="white-box6">
+              <div class="image-box">
+                <img src="About Me Images/Etsy.png" alt="etsy" class="etsy">
+              </div>
+              <div class="image-box">
+                <img src="About Me Images/masks.jpg" alt="masks" class = "masks">
+              </div>
+              <div class="image-box">
+                <img src="About Me Images/interior.png" alt="interior" class = "interior">
+              </div>
+              <div class="image-box">
+                <img src="About Me Images/Drawings.png" alt="drawings" class = "drawings">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <a href="#">Resume</a>
       <a href="#">Contact</a>
     </div>
@@ -34,7 +116,7 @@
   <div class="burgeroverlay" id="burgeroverlay">
     <div class="burgeroverlay-content">
       <a href="#">Work</a>
-      <a href="#">About Me</a>
+      <a href="#" onclick="openaboutMeOverlay()">About Me</a>
       <a href="#">Resume</a>
       <a href="#">Contact</a>
     </div>
@@ -44,7 +126,7 @@
     <div class="image-container">
       <img src="Header1.jpg" alt="Header 1">
       <div class="image-overlay">
-        <div class="overlay-text">
+        <div class="overlay-text1">
           <p>UX UI DESIGNER & FRONT END DEVELOPER</p>
         </div>
       </div>
@@ -170,6 +252,7 @@
             <h3>COMPETITIVE ANALYSIS</h3>
             <h3>___________________</h3>
             <h3>On Track for Improvement</h3>
+            <br>
             <p>The leading running apps (Nike Run Club, Strava, Runkeeper, MapMyRun) offer a range of features, but many
               still fall short in terms of personalization and user engagement. Typical features include:
               .</p>
@@ -233,23 +316,77 @@
           effectively and enjoy a more personalized running experience.
         </p>
       </div>
+      <h2> Wireframe Prototype</h2>
+      <br>
       <div class="wireframe-container">
+
         <div class="white-box4">
-<h2> Wireframe Prototype</h2>
-<p> The initial prototype was designed with Balsamiq having the user flow in mind. The landing page allowed for a clear interface, only providing the most essential data.
-</p>
-<br>
-<ul></ul>
-  <li> Performance Breakdown displays the key data input for the based on the users goals.</li>
-  <li>Performance Overview chart displays the user data percentages. </li>
-    <li>User overlay screens include logging data for run session (distance, durations etc.), as well as providing mood insights after run completion.</li>
-      <li>Once complete, user data is populated on the home screen.</li>
-    </ul>
-    </div>
-    <img src="DataModel.png" alt="Data Model" class="data-model">
+
+          <p> The initial prototype was designed with Balsamiq having the user flow in mind. The landing page allowed
+            for a clear interface, only providing the most essential data.
+          </p>
+          <br>
+          <ul>
+            <li> Performance Breakdown displays the key data input for the based on the users goals.</li>
+            <li>Performance Overview chart displays the user data percentages. </li>
+            <li>User overlay screens include logging data for run session (distance, durations etc.), as well as
+              providing mood insights after run completion.</li>
+            <li>Once complete, user data is populated on the home screen.</li>
+          </ul>
         </div>
+        <img src="DataModel.png" alt="Data Model" class="data-model">
+      </div>
+      <h3> Desktop View</h3>
+      <h3>________</h3>
+      <div class="wireframe-container">
+        <div class="white-box5">
+          <img src="Wireframe1.png" alt="wireframe1" class="wireframe1">
+          <img src="Wireframe2.png" alt="wireframe2" class="wireframe2">
+        </div>
+      </div>
+
+      <img src="Wireframe3.png" alt="wireframe3" class="wireframe3">
+      <h3>Mobile View</h3>
+      <h3>________</h3>
+      <img src="Wireframe4.png" alt="wireframe4" class="wireframe4">
+      <img src="Wireframe5.png" alt="wireframe5" class="wireframe5">
+
+
+
+
+      <div class="grey-section4">
+        <h2>High-Fidelity Prototype</h2>
+        <br>
+        <div class="flex-container">
+
+          <div class="white-box6">
+            <p>
+
+              A single-page front-end architecture was created using HTML, JavaScript, and CSS. It offers users multiple
+              input fields and ensures persistent access to saved data across sessions. Users can retrieve input history
+              by date selection and delete entries from local storage. </p>
+            <br>
+            <p>
+              After users submit data, performance and overview charts are calculated as percentages and displayed. </p>
+          </div>
+          <img src="RunwisePrototype1.JPG" alt="runwisePrototype1" class="runwise-prototype1">
+        </div>
+      </div>
+      <div class="wireframe-container2">
+        <div class="white-box5">
+          <img src="RunwisePrototype2.JPG" alt="runwisePrototype2" class="runwise-prototype2">
+          <img src="RunwisePrototype3.JPG" alt="runwisePrototype3" class="runwise-prototype3">
+        </div>
+      </div>
+      <div class="grey-section5">
+        <h3> Link to Github Repository</h3>
+        <div class="button-container">
+          <a href="https://github.com/sarahjjt895/RunWise" class="runwise-button">RunWise</a>
+        </div>
+      </div>
+
+
     </div>
-  </div>
   </div>
 
   <footer>
