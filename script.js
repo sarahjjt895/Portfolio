@@ -1,26 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
-  const overlay = document.querySelector('.web-development-overlay');
 
-  // Show overlay when needed (for demonstration)
-  const showOverlayButton = document.getElementById('show-overlay');
-  showOverlayButton.addEventListener('click', function() {
-    overlay.classList.add('active');
-  });
-
-  // Close overlay when clicking outside
-  window.addEventListener('click', function(event) {
-    if (event.target.closest('.web-development-overlay') === null) {
-      overlay.classList.remove('active');
-    }
-  });
-
-  // Optional: Close overlay on pressing Escape key
-  document.addEventListener('keydown', function(event) {
-    if (event.key === 'Escape') {
-      overlay.classList.remove('active');
-    }
-  });
-});
 
 // Prevent form submission for demonstration purposes
 document.getElementById('contactForm').addEventListener('submit', function(event) {
@@ -37,6 +15,30 @@ function closeWebDevelopmentOverlay() {
   // Close the Web Development overlay
   document.getElementById('webDevelopmentOverlay').style.display = 'none';
 }
+
+    // Close the overlay if clicked outside the content
+    webDevelopmentOverlay.addEventListener('click', function (e) {
+      if (e.target === webDevelopmentOverlay) {
+        closeWebDevelopmentOverlay();
+      }
+  });
+
+  function openaboutMeOverlay() {
+    // Show the Web Development overlay
+    document.getElementById('aboutMeOverlay').style.display = 'flex';
+  }
+  
+  function closeaboutMeOverlay(){
+    // Close the Web Development overlay
+    document.getElementById('aboutMeOverlay').style.display = 'none';
+  }
+  
+      // Close the overlay if clicked outside the content
+      aboutMeOverlay.addEventListener('click', function (e) {
+        if (e.target === aboutMeOverlay) {
+          closeaboutMeOverlay();
+        }
+    });
 
 // JavaScript to toggle visibility based on screen width
 window.addEventListener('resize', function() {
@@ -96,27 +98,51 @@ document.addEventListener('keydown', function(event) {
     burgerOverlay.classList.remove('active');
   }
 });
-// Check if the element is in the viewport
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return (
-    rect.top >= 0 &&
-    rect.left >= 0 &&
-    rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-    rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-  );
+
+// Function to handle intersection changes
+function handleIntersection(entries, observer) {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('in-view');
+      observer.unobserve(entry.target); // Stop observing once the animation is triggered
+    }
+  });
 }
 
-// Function to handle scroll event
-function onScroll() {
-  const dataModelImage = document.querySelector('.data-model');
-  if (isInViewport(dataModelImage)) {
-    dataModelImage.classList.add('in-view');
-    window.removeEventListener('scroll', onScroll); // Remove the event listener once the animation is triggered
+// Create an intersection observer
+const observer = new IntersectionObserver(handleIntersection, {
+  threshold: 0.5 // Adjust the threshold as needed
+});
+
+  // Observe the .data-model and .runwise-prototype1 elements
+  const elementsToObserve = document.querySelectorAll('.data-model, .runwise-prototype1, .runwise-prototype2,.runwise-prototype3');
+  elementsToObserve.forEach(element => {
+    observer.observe(element);
+  });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const images = document.querySelectorAll('.wireframe1, .wireframe2, .wireframe3, .wireframe4, .wireframe5');
+
+  // Function to handle intersection changes
+  function handleIntersection(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('fade-in'); // Add fade-in class
+        observer.unobserve(entry.target); // Stop observing once the animation is triggered
+      }
+    });
   }
-}
 
-// Attach scroll event listener
-window.addEventListener('scroll', onScroll);
-window.addEventListener('load', onScroll); // Check if it's already in view on page load
+  // Create an intersection observer
+  const observer = new IntersectionObserver(handleIntersection, {
+    threshold: 0.1 // Adjust the threshold as needed
+  });
+
+  // Observe each image
+  images.forEach(image => {
+    observer.observe(image);
+  });
+});
+
+
 
