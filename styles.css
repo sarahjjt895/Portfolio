@@ -390,7 +390,7 @@ section {
     font-size: 1rem;
   }
 }
-
+/*WEB DEVELOPMENT OVERLAY*/
 /* Overlay styles for Web Development */
 .web-development-overlay {
   position: fixed;
@@ -437,8 +437,6 @@ section {
   box-sizing: border-box;
 }
 
-
-
 .web-development-overlay .white-box {
   background-color: white;
   padding: 80px;
@@ -453,8 +451,6 @@ section {
   /* Align text to the left */
 }
 
-
-
 .web-development-overlay .grey-section1 img {
   max-width: 50%;
   /* Adjust max width of the image */
@@ -467,7 +463,6 @@ section {
 .web-development-overlay .white-box h3 {
   font-size: 1.8rem;
   font-weight: 400;
-
 }
 
 .web-development-overlay .white-box p {
@@ -499,7 +494,6 @@ h4 {
   /* Light weight */
 }
 
-
 .web-development-overlay button {
   width: 50px;
   /* Adjust width and height to make it circular */
@@ -528,12 +522,10 @@ h4 {
   color: rgb(189, 188, 188);
 }
 
-
 /* Ensure overlay is clickable */
 .overlay {
   cursor: pointer;
 }
-
 
 .web-development-overlay .grey-section2 {
   background-color: rgb(207, 207, 207);
@@ -774,16 +766,7 @@ h4 {
   margin-left: 5%;
 }
 
-.grey-section3 {
-  background-color: rgb(207, 207, 207);
-  padding: 40px; 
-  margin: 0 auto;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-  top: 50%;
-  padding-bottom: 10vh;
-}
+
 
 .grey-section5{
   background-color: rgb(207, 207, 207);
@@ -848,15 +831,11 @@ h4 {
   flex:1;
 }
 
-
-
-
 .wireframe1, 
 .wireframe2,
 .wireframe3,
 .wireframe4,
-.wireframe5
-{
+.wireframe5 {
   opacity: 0; /* Initially hidden */
   transition: opacity 1s ease-in;
 }
@@ -865,7 +844,7 @@ h4 {
 .wireframe2.fade-in,
 .wireframe3.fade-in, 
 .wireframe4.fade-in,
-.wireframe5.fade-in  {
+.wireframe5.fade-in {
   opacity: 1; /* Fade in */
 }
 
@@ -900,7 +879,6 @@ h4 {
 .white-box5 {
   width: 100%;
   display: flex;
-
 }
 
 .grey-section4 {
@@ -980,6 +958,7 @@ h4 {
   color: rgb(255, 255, 255); /* Button text color */
 }
 
+/* ABOUT ME OVERLAY*/
 
 /* Overlay styles for about-me-overlay */
 .about-me-overlay {
@@ -1040,7 +1019,6 @@ h4 {
   color: rgb(189, 188, 188);
 }
 
-
 .about-me-content p {
   font-family: 'Roboto', sans-serif;
 }
@@ -1051,13 +1029,33 @@ h4 {
   font-weight: 400;
   text-align: left;
 }
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px); /* Reduced the height of the bounce */
+  }
+  60% {
+    transform: translateY(-15px); /* Reduced the height of the bounce */
+  }
+  90% {
+    transform: translateY(-5px); /* Reduced the height of the bounce */
+  }
+}
 
 .aboutMe {
   width: 40%;
   height: 100%;
   align-items: center;
+  opacity: 0; /* Initially hide the image */
+  transition: opacity 1s ease-in-out; /* Extended the duration for a smoother transition */
 }
 
+.aboutMe.bounce {
+  animation: bounce 1.4s; /* Apply the bounce animation */
+  opacity: 1; /* Show the image when the animation starts */
+}
 
 .about-me-overlay .white-box4 {
   margin-left: 5%;
@@ -1073,7 +1071,100 @@ h4 {
   height: calc(100% - 60px); /* Adjust height to end before the bottom */
   padding: 70px; /* Adjust padding as needed */
   box-sizing: border-box;
+ 
 }
+.about-me-overlay .grey-section2 {
+  display: flex; /* Make it a Flex container */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: rgb(207, 207, 207);
+  width: 95%;
+  height: calc(100% - 60px); /* Adjust height to end before the bottom */
+  padding: 70px; /* Adjust padding as needed */
+  box-sizing: border-box;
+  margin-left:2.5%;
+  margin-bottom: 2.5%;
+}
+.about-me-overlay .white-box7 {
+  width: 95%;
+  background-color: white;
+  display: flex;
+  flex-direction: row; /* Display items in a row */
+  justify-content: space-between; /* Distribute items evenly along the row */
+  align-items: flex-start;
+  padding: 5%; /* Adjust padding for spacing */
+  gap: 20px; /* Adjust gap between sections as needed */
+}
+
+.about-me-overlay .white-box7 .contact-info {
+  flex: 1; /* Allow items to grow and shrink */
+}
+
+.about-me-overlay .white-box7 .contact-info h2 {
+  margin-bottom: 10px; /* Add margin below h2 */
+  text-align: left;
+}
+
+.about-me-overlay .white-box7 .contact-info p {
+  margin: 10px 0; /* Adjust margin for individual paragraphs */
+  text-align: left;
+}
+
+.about-me-overlay .white-box7 .contact-info .icon-wrapper {
+  display: flex;
+  gap: 10px; /* Adjust gap between icons as needed */
+  align-items: center; /* Align icons to the center vertically */
+}
+
+.about-me-overlay .white-box7 .contact-info .linkedin,
+.about-me-overlay .white-box7 .contact-info .etsy-icon {
+  max-width: 40px; /* Set the desired max-width for the icons */
+  height: auto;
+}
+
+.about-me-overlay .white-box8 {
+  width: 95%;
+  background-color: white;
+  align-items: center;
+padding-top:1%;
+padding-bottom:20px;
+}
+
+.download-cv {
+  width: 100%;
+  display: flex;
+  justify-content: center; /* Center the button horizontally */
+  margin-top: 20px; /* Add some space above the button */
+}
+
+.download-button {
+  font-family: 'Varela Round', sans-serif;
+  padding: 10px 20px;
+  background-color: #ffffff; /* Button background color */
+  color: rgb(0, 0, 0); /* Button text color */
+  text-align: center;
+  text-decoration: none; /* Remove underline */
+  border: 1px solid black; /* Add border for button */
+  border-radius: 20px; /* Curved edges */
+  transition: background-color 0.3s ease; /* Smooth background color transition */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.253);
+}
+
+.download-button:hover {
+  background-color: #a7a8a7; /* Darken the button on hover */
+  color: rgb(255, 255, 255); /* Button text color */
+  border: 0px;
+}
+
+.about-me-overlay .grey-section3 {
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  background-color: rgb(207, 207, 207);
+  width: 100%;
+  height: calc(100% - 60px); /* Adjust height to end before the bottom */
+  padding: 70px; /* Adjust padding as needed */
+}
+
 
 .about-me-overlay .white-section {
   justify-content: center; /* Center horizontally */
@@ -1096,6 +1187,17 @@ h4 {
   padding: 10%; /* Add padding for spacing */
 }
 
+.grey-section6 {
+  background-color: rgb(207, 207, 207);
+  padding: 40px; 
+  margin: 0 auto;
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  padding-bottom: 10vh;
+}
+
 .about-me-overlay .white-box5 p {
   text-align: left;
 }
@@ -1112,13 +1214,22 @@ h4 {
 }
 
 .image-box {
-  width: 200px; /* Set the desired width */
-  height: 200px; /* Set the same value as width to make it a square */
-  overflow: hidden; /* Hide any overflow */
+  width: 250px; /* Set the desired width */
+  height: 250px; /* Set the same value as width to make it a square */
   position: relative;
-  flex: 1;
   background-color: white;
 }
+
+.image-caption {
+  position: absolute;
+  bottom: 10px; /* Adjust as needed to position the text */
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 1.3rem; /* Adjust font size as needed */
+  color: black;
+}
+
 .image-box .etsy {
   width: 100%;
   height: 100%;
@@ -1130,8 +1241,8 @@ h4 {
   transform-origin: center center;
   background-color: white;
   padding:2%;
+  padding-bottom: 50px;
 }
-
 
 .image-box .interior{
   width: 100%;
@@ -1145,6 +1256,7 @@ h4 {
   background-color: white;
   padding:2%;
   margin-top: 4%;
+  padding-bottom: 50px;
 }
 
 .image-box .masks {
@@ -1158,6 +1270,7 @@ h4 {
   transform-origin: center center;
   background-color: white;
   padding:2%;
+  padding-bottom: 50px;
 }
 
 .image-box .drawings {
@@ -1172,8 +1285,8 @@ h4 {
   background-color: white;
   padding:2%;
   margin-top: 3%;
+  padding-bottom: 50px;
 }
-
 
 .about-me-overlay .grey-section1 {
   background-color: rgb(207, 207, 207);
@@ -1186,16 +1299,20 @@ h4 {
   padding: 70px;
   /* Adjust padding as needed */
   box-sizing: border-box;
+  justify-content: space-between; /* Adjusts space between images */
+  align-items: center; /* Aligns images vertically in the center */
 }
+
+
 .button-container .etsy-button {
   text-align: center; /* Center the button */
-  margin-top: 20px; /* Add some space above the button */
+  margin-top: 10px; /* Add some space above the button */
 }
 
 .etsy-button {
   font-family: 'Varela Round', sans-serif;
   display: inline-block;
-  padding: 5px 10px; /* Adjust padding */
+  padding: 5px 2px; /* Adjust padding */
   background-color: #ffffff; /* Button background color */
   color: rgb(0, 0, 0); /* Button text color */
   text-align: center;
@@ -1203,7 +1320,7 @@ h4 {
   border-radius: 20px; /* Curved edges */
   transition: background-color 0.3s ease; /* Smooth background color transition */
   box-shadow: 0 0 30px rgba(0, 0, 0, 0.253);
-  line-height: 1; /* Adjust line-height if needed */
+  line-height: 0.5; /* Adjust line-height if needed */
 }
 
 .etsy-button:hover {
@@ -1211,6 +1328,317 @@ h4 {
   color: rgb(255, 255, 255); /* Button text color */
 }
 
+
+
+/*UX DESIGN OVERLAY*/
+/* Overlay styles for Web Development */
+/* UX DESIGN OVERLAY */
+.ux-design-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  overflow: hidden; /* Prevent underlying content from scrolling */
+}
+
+.ux-design-overlay .overlay-content {
+  background-color: white;
+  width: 80%;
+  border-radius: 10px;
+  max-height: 90vh; /* Adjust max height as needed */
+  overflow: auto; /* Enable scrolling within the overlay */
+  padding: 0px; /* Adjust padding as needed */
+  text-align: center;
+  position: relative; /* Use relative positioning for children */
+}
+
+
+.real-talk-banner {
+  max-width: 100%; /* Ensure banner does not overflow */
+  max-height: 100%; /* Ensure banner does not overflow */
+}
+
+.ux-design-overlay .white-section2 {
+  background-color:white;;
+  width: 85%;
+  height: calc(100% - 60px);
+  /* Adjust height to end before the bottom */
+  align-items: center;
+  /* Center items vertically */
+  justify-content: center;
+  /* Center items horizontally */
+  margin: 0 auto;
+  /* Auto margin to center horizontally */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  /* Space between the two boxes */
+  padding: 30px 40px;
+  /* Add padding to the left and right */
+  margin-top: 30px;
+}
+
+.ux-design-overlay .white-box1,
+.ux-design-overlay .white-box2 {
+  background-color: white;
+  padding: 20px;
+  /* Adjust padding as needed */
+  width: 45%;
+  /* Optional: Add shadow for better visibility */
+  text-align: left;
+  /* Center text horizontally */
+  box-sizing: border-box;
+  display: flex;
+  /* Use flexbox for container */
+  flex-direction: column;
+  /* Stack items vertically */
+  justify-content: space-between;
+  /* Space evenly between items */
+  min-height: 50vh;
+  /* Ensure both boxes have at least 60vh height */
+  height: auto;
+  /* Allow height to adjust based on content */
+}
+
+.ux-design-overlay .white-box1 h3,
+.ux-design-overlay .white-box2 h3 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.ux-design-overlay .white-box1 p,
+.ux-design-overlay .white-box2 p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  /* Light weight */
+  font-size: 1rem;
+  flex: 1;
+  /* Distribute remaining space evenly */
+  margin-bottom: 5px;
+  /* Optional: Add margin between paragraphs */
+}
+
+.ux-design-overlay .white-box2 ul {
+  list-style-position: outside;
+  /* Ensure the bullet points are outside the list items */
+  padding-left: 30px;
+  /* Adjust padding as needed */
+  flex: 1;
+  /* Distribute remaining space evenly */
+}
+
+.ux-design-overlay .white-box2 li {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  /* Light weight */
+  font-size: 1rem;
+  text-align: left;
+  margin-bottom: 5px;
+  /* Optional: Add margin between list items */
+}
+.ux-design-overlay .grey-section {
+ background-color: rgb(207, 207, 207);
+  height: calc(100% - 60px);
+  /* Adjust height to end before the bottom */
+  align-items: center;
+  /* Center items vertically */
+  justify-content: center;
+  /* Center items horizontally */
+  margin: 0 auto;
+  /* Space between the two boxes */
+  padding: 30px 40px;
+  /* Add padding to the left and right */
+  margin-top: 30px;
+}
+
+.ux-design-overlay .grey-section p {
+  width:50%;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  /* Light weight */
+  font-size: 1rem;
+  flex: 1;
+  /* Distribute remaining space evenly */
+  margin-bottom: 5px;
+  text-align: left;
+margin-left:10%;
+}
+
+.ux-design-overlay .grey-section h2 {
+  width:50%;
+  font-size: 2.3rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+  text-align: left;
+  margin-left:10%;
+}
+
+
+.ux-design-overlay .grey-section2{
+  background-color: rgb(207, 207, 207);
+  width: 100%;
+  height: calc(100% - 60px);
+  /* Adjust height to end before the bottom */
+  align-items: center;
+  /* Center items vertically */
+  justify-content: center;
+  /* Center items horizontally */
+  margin: 0 auto;
+  /* Auto margin to center horizontally */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  /* Space between the two boxes */
+  padding: 30px 90px;
+  /* Add padding to the left and right */
+}
+.ux-design-overlay .white-box {
+  background-color: white;
+  box-shadow: rgba(46, 240, 240, 0.4) 5px 5px, rgba(22, 116, 116, 0.4) 10px 10px, rgba(23, 50, 50, 0.4) 15px 15px, rgba(16, 34, 34, 0.4) 20px 20px, rgba(37, 37, 37, 0.05) 25px 25px;
+  padding: 20px; /* Adjust padding as needed */
+  width: 170px;
+  height: 170px;
+  text-align: center; /* Center text horizontally */
+  box-sizing: border-box;
+  display: flex; /* Use flexbox for container */
+  flex-direction: column; /* Stack items vertically */
+  justify-content: center; /* Center items vertically */
+  align-items: center; /* Center items horizontally */
+  padding-top: 4%;
+}
+
+
+.ux-design-overlay .white-box h2{
+  font-size:2.5rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.ux-design-overlay .white-box p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  /* Light weight */
+  font-size: 1rem;
+  flex: 1;
+  /* Distribute remaining space evenly */
+  margin-bottom: 5px;
+  /* Optional: Add margin between paragraphs */
+}
+
+.statistic-1 {
+  height: auto;
+  width: auto;
+  max-height: 35%; /* Maximum height as a percentage of the parent element */
+  max-width: 25%; /* Maximum width as a percentage of the parent element */
+  opacity: 0;
+  transform: translateX(35%); /* Start off-screen to the left */
+  transition: opacity 1.3s ease-out, transform 1.3s ease-out;
+  z-index: 1;
+  position: absolute; /* Make sure it’s positioned absolutely if needed */
+  left: 65%; /* This will stop the image at 40% from the left side */
+ margin-bottom: 10%;
+}
+
+.statistic-1.in-view {
+  opacity: 1;
+  transform: translateX(0); /* Move to the final position */
+}
+
+.ux-design-overlay .grey-section3 {
+  background-color: rgb(207, 207, 207);
+  width: 100%;
+  height: calc(100% - 60px);
+  /* Adjust height to end before the bottom */
+  align-items: center;
+  /* Center items vertically */
+  justify-content: center;
+  /* Center items horizontally */
+  margin: 0 auto;
+  /* Auto margin to center horizontally */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  /* Space between the two boxes */
+  padding: 30px 40px;
+  /* Add padding to the left and right */
+}
+
+.ux-design-overlay .grey-box1  {
+  background-color: rgb(207, 207, 207);
+  padding: 20px;
+  /* Adjust padding as needed */
+  width: 100%;
+  /* Optional: Add shadow for better visibility */
+  text-align: left;
+  /* Center text horizontally */
+  box-sizing: border-box;
+  display: flex;
+  /* Use flexbox for container */
+  flex-direction: column;
+  /* Stack items vertically */
+  justify-content: space-between;
+  /* Space evenly between items */
+  min-height: 50vh;
+  /* Ensure both boxes have at least 60vh height */
+  height: auto;
+  /* Allow height to adjust based on content */
+  padding-left:10%;
+  padding-top: 10%;;
+}
+
+.ux-design-overlay .grey-box2 {
+  background-color: rgb(207, 207, 207);
+  padding: 20px;
+  /* Adjust padding as needed */
+  width: 50%;
+  /* Optional: Add shadow for better visibility */
+  text-align: left;
+  /* Center text horizontally */
+  box-sizing: border-box;
+  display: flex;
+  /* Use flexbox for container */
+  flex-direction: column;
+  /* Stack items vertically */
+  justify-content: space-between;
+  /* Space evenly between items */
+  min-height: 50vh;
+  /* Ensure both boxes have at least 60vh height */
+  height: auto;
+  /* Allow height to adjust based on content */
+  padding-left:10%;
+  padding-top: 10%;;
+}
+
+.ux-design-overlay .grey-box1 h2,
+.ux-design-overlay .grey-box2 h2{
+  font-size: 2.5rem;
+  font-weight: 400;
+  margin-bottom: 10px;
+}
+
+.ux-design-overlay .grey-box1 p,
+.ux-design-overlay .grey-box2 p {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 100;
+  /* Light weight */
+  font-size: 1rem;
+  flex: 1;
+  /* Distribute remaining space evenly */
+  margin-bottom: 5px;
+  /* Optional: Add margin between paragraphs */
+}
+
+.comp-analysis {
+  
+}
+/*MEDIA QUERIES*/
 
 /* Media query for screens less than 1600px */
 @media (min-width: 1500px) {
