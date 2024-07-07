@@ -6,6 +6,8 @@ document.getElementById('contactForm').addEventListener('submit', function(event
   alert('Form submitted successfully!');
 });
 
+
+// WEB DEVELOPMENT OVERLAY FUNCTION
 function openWebDevelopmentOverlay() {
   // Show the Web Development overlay
   document.getElementById('webDevelopmentOverlay').style.display = 'flex';
@@ -23,13 +25,15 @@ function closeWebDevelopmentOverlay() {
       }
   });
 
+
+// ABOUT ME OVERLAY FUNCTION
   function openaboutMeOverlay() {
-    // Show the Web Development overlay
+    // Show the About Me  overlay
     document.getElementById('aboutMeOverlay').style.display = 'flex';
   }
   
   function closeaboutMeOverlay(){
-    // Close the Web Development overlay
+    // Close the About Me overlay
     document.getElementById('aboutMeOverlay').style.display = 'none';
   }
   
@@ -39,6 +43,26 @@ function closeWebDevelopmentOverlay() {
           closeaboutMeOverlay();
         }
     });
+
+
+    // UX DESIGN OVERLAY FUNCTION
+    function openUXDesignOverlay() {
+      // Show the Web Development overlay
+      document.getElementById('UXDesignOverlay').style.display = 'flex';
+    }
+    
+    function closeUXDesignOverlay(){
+      // Close the Web Development overlay
+      document.getElementById('UXDesignOverlay').style.display = 'none';
+    }
+    
+        // Close the overlay if clicked outside the content
+        UXDesignOverlay.addEventListener('click', function (e) {
+          if (e.target === UXDesignOverlay) {
+            closeUXDesignOverlay();
+          }
+      });
+
 
 // JavaScript to toggle visibility based on screen width
 window.addEventListener('resize', function() {
@@ -115,7 +139,7 @@ const observer = new IntersectionObserver(handleIntersection, {
 });
 
   // Observe the .data-model and .runwise-prototype1 elements
-  const elementsToObserve = document.querySelectorAll('.data-model, .runwise-prototype1, .runwise-prototype2,.runwise-prototype3');
+  const elementsToObserve = document.querySelectorAll('.data-model, .runwise-prototype1, .runwise-prototype2, .runwise-prototype3, .statistic-1');
   elementsToObserve.forEach(element => {
     observer.observe(element);
   });
@@ -145,4 +169,26 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
+document.addEventListener("DOMContentLoaded", function() {
+  const aboutMeImage = document.querySelector('.aboutMe');
+
+  // Function to handle intersection changes
+  function handleIntersection(entries, observer) {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        console.log('Image is in view'); // Debug log
+        entry.target.classList.add('bounce');
+        observer.unobserve(entry.target); // Stop observing once the animation is triggered
+      }
+    });
+  }
+
+  // Create an intersection observer
+  const observer = new IntersectionObserver(handleIntersection, {
+    threshold: 0.5 // Adjust the threshold as needed
+  });
+
+  // Observe the aboutMe image
+  observer.observe(aboutMeImage);
+});
 
