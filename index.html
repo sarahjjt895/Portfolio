@@ -12,153 +12,36 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+
 </head>
 
 <body>
+  <!-- --------------------------------------------- HEADER --------------------------------------------->
   <div class="page-header">
     <div class="logo">
       <p>Sarah JJ Taylor</p>
     </div>
     <div class="nav-bar">
-      <a href="#" class="active">Home</a>
-      <a href="#">Work</a>
       <a href="#" onclick="openaboutMeOverlay()">About Me</a>
-
-      <!-- New overlay for About Me -->
-      <div id="aboutMeOverlay" class="about-me-overlay" style="display: none;">
-        <div class="about-me-content">
-          <button onclick="closeaboutMeOverlay()">X</button>
-          <div class="grey-section1">
-            <img src="Images/AboutMe.png" alt="about-me" class="aboutMe">
-            <div class="white-box4">
-              <h2>Hello,</h2>
-              <br>
-              <p>
-                My name is Sarah, and I'm a UX/UI designer and front-end developer based in Sydney, Australia.
-              </p>
-              <br>
-              <p>
-                I began my academic path after moving to Sydney, where I completed a Diploma of Interior Design &
-                Decoration. Initially, I aimed to enter the world of architecture and design, but life had other plans.
-                Drawn to the tech world, I taught myself to code and started creating prototypes and mockups of apps and
-                web pages. This newfound passion led me to pursue a Bachelor of Design Computing at the University of
-                Sydney where I was able to turn ideas into reality from user research through to concept and later to
-                high fidelity prototypes.
-              </p>
-            </div>
-          </div>
-          <div class="grey-section">
-            <div class="white-box5">
-              <h2>A little bit of background...</h2>
-
-              <br>
-              <p>Since I can remember, I've always had a passion for creating and developing ideas. As a child, I
-                enjoyed sketching and painting, and now, I design products for public consumption. During the pandemic,
-                I
-                learned to sew on my grandma's Elna. Inspired, I bought one for myself and began creating reusable
-                fabric masks in custom designs. I advertised them and made them to order, to the point where strangers
-                would ask where they were from when passing by, and make an order.</p>
-              <br>
-              <p>Recently, I launched my own Etsy store, where I sell a variety of designs, from pillows to printable
-                event templates. Creativity is in my DNA, and I can't help but seek unmatched attention to detail in
-                everything I make; I can demonstrate extensive patience when it comes to refining an idea. </p>
-              <br>
-              <p>I'm deeply fascinated with all aspects of the user experience, user research, user journey mapping, and
-                visual design. I advocate for the user, ensuring that products meet their needs and are easy to use. My
-                background in varied professional environments, as well as diverse lifestyle settings has allowed me to
-                connect and understand users in a empathetic way, where I'm able to gain deep insights and user needs,
-                leaving no stone unturned.</p>
-              <br>
-              <p>I am disciplined in a wide range of technical skills ranging from developing the front and back end of
-                the website, prototyping with Balsamiq and Figma, and rendering illustrations and animations with Adobe
-                PS,
-                Illustrator, AfterEffects and too many more to mention.</p>
-            </div>
-          </div>
-          <div class="white-section">
-            <h2>Personal Projects</h2>
-            <br>
-            <p>I've developed a number of personal "side" projects over the years, including an Etsy store, creating and
-              selling masks, interior design projects and some drawing and painting in my spare time. It brings me great
-              joy and satisfaction to devise an idea, then bring it to life (and if people like my designs as much as I
-              do, its an added bonus!). Feel free to peep my Etsy store if its something that might interest you.
-            </p>
-            <div class="button-container">
-              <a href="https://janejeffreysco.etsy.com" class="etsy-button">My Etsy Store</a>
-            </div>
-          </div>
-          <div class="grey-section2">
-            <div class="white-box6">
-              <div class="image-box">
-                <img src="Images/Etsy.png" alt="etsy" class="etsy">
-                <div class="image-caption">Etsy Store</div>
-              </div>
-              <div class="image-box">
-                <img src="Images/masks.jpg" alt="masks" class="masks">
-                <div class="image-caption">Masks Collection</div>
-              </div>
-              <div class="image-box">
-                <img src="Images/interior.png" alt="interior" class="interior">
-                <div class="image-caption">Interior Design</div>
-              </div>
-              <div class="image-box">
-                <img src="Images/Drawings.png" alt="drawings" class="drawings">
-                <div class="image-caption">Artistic Drawings</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="grey-section3">
-            <div class="white-box7">
-              <div class="contact-info">
-                <h2>Contact</h2>
-                <br>
-                <p>I'm always looking for new and exciting opportunities.</p>
-                <p>Let's connect.</p>
-              </div>
-              <div class="contact-info">
-                <div class="icon-wrapper">
-                  <a href="https://www.linkedin.com/in/sarah-taylor-80700969" target="_blank">
-                    <img src="Images/LinkedIn.png" alt="linkedin" class="linkedin">
-                  </a>
-                  <a href="https://janejeffreysco.etsy.com" target="_blank">
-                    <img src="Images/Etsy_Icon.png" alt="etsyIcon" class="etsy-icon">
-                  </a>
-                </div>
-                <p>sarahjjt8@gmail.com</p>
-                <p>0419 772 818</p>
-              </div>
-            </div>
-            <div class="white-box8">
-              <div class="download-cv">
-                <a href="SJJTaylor_CV.pdf" download class="download-button">Download CV</a>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-      <a href="#">Resume</a>
-      <a href="#">Contact</a>
+      <a href="#" onclick="openContactOverlay()">Contact</a>
     </div>
     <div class="burger-menu">
-      <!-- Burger Menu Icon (can be an image or using CSS for icon) -->
       <img src="Images/BurgerMenu.png" alt="Burger Menu">
     </div>
   </div>
 
-  <!-- Overlay for Burger Menu -->
+  <!-- --------------------------------------------- Burger Menu --------------------------------------------->
   <div class="burgeroverlay" id="burgeroverlay">
     <div class="burgeroverlay-content">
-      <a href="#">Work</a>
       <a href="#" onclick="openaboutMeOverlay()">About Me</a>
-      <a href="#">Resume</a>
-      <a href="#">Contact</a>
+      <a href="#" onclick="openContactOverlay()">Contact</a>
     </div>
   </div>
 
   <div class="header-content">
     <div class="image-container">
+      <div class="header-overlay"></div>
       <img src="Images/Header1.jpg" alt="Header 1">
       <div class="image-overlay">
         <div class="overlay-text1">
@@ -168,6 +51,7 @@
     </div>
   </div>
 
+  <!----------------------------------------------- HOME SECTION --------------------------------------------->
   <section id="home">
     <h2>Welcome</h2>
     <p>Hello! I'm Sarah, a front-end developer with a passion for transforming data into cutting-edge, impeccably
@@ -175,6 +59,7 @@
       eventually made my way to the beautiful city of Sydney, where I've lived for the past 10 years.</p>
   </section>
 
+  <!----------------------------------------------- GALLERY SECTION --------------------------------------------->
   <section id="work">
     <div class="gallery">
       <div class="gallery-item">
@@ -204,20 +89,176 @@
     </div>
   </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <form id="contactForm">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </section>
 
-  <!-- New overlay for Web Development -->
+  <!----------------------------------------------- ABOUT ME OVERLAY --------------------------------------------->
+  <div id="aboutMeOverlay" class="about-me-overlay" style="display: none;">
+    <div class="about-me-content">
+      <button onclick="closeaboutMeOverlay()">X</button>
+      <div class="grey-section1">
+        <img src="Images/AboutMe.png" alt="about-me" class="aboutMe">
+        <div class="white-box4">
+          <h2>Hello,</h2>
+          <br>
+          <p>
+            My name is Sarah, and I'm a UX/UI designer and front-end developer based in Sydney, Australia.
+          </p>
+          <br>
+          <p>
+            I began my academic path after moving to Sydney, where I completed a Diploma of Interior Design &
+            Decoration. Initially, I aimed to enter the world of architecture and design, but life had other plans.
+            Drawn to the tech world, I taught myself to code and started creating prototypes and mockups of apps and
+            web pages. This newfound passion led me to pursue a Bachelor of Design Computing at the University of
+            Sydney where I was able to turn ideas into reality from user research through to concept and later to
+            high fidelity prototypes.
+          </p>
+        </div>
+      </div>
+      <div class="grey-section">
+        <div class="white-box5">
+          <h2>A little bit of background...</h2>
+
+          <br>
+          <p>Since I can remember, I've always had a passion for creating and developing ideas. As a child, I
+            enjoyed sketching and painting, and now, I design products for public consumption. During the pandemic,
+            I
+            learned to sew on my grandma's Elna. Inspired, I bought one for myself and began creating reusable
+            fabric masks in custom designs. I advertised them and made them to order, to the point where strangers
+            would ask where they were from when passing by, and make an order.</p>
+          <br>
+          <p>Recently, I launched my own Etsy store, where I sell a variety of designs, from pillows to printable
+            event templates. Creativity is in my DNA, and I can't help but seek unmatched attention to detail in
+            everything I make; I can demonstrate extensive patience when it comes to refining an idea. </p>
+          <br>
+          <p>I'm deeply fascinated with all aspects of the user experience, user research, user journey mapping, and
+            visual design. I advocate for the user, ensuring that products meet their needs and are easy to use. My
+            background in varied professional environments, as well as diverse lifestyle settings has allowed me to
+            connect and understand users in a empathetic way, where I'm able to gain deep insights and user needs,
+            leaving no stone unturned.</p>
+          <br>
+          <p>I am disciplined in a wide range of technical skills ranging from developing the front and back end of
+            the website, prototyping with Balsamiq and Figma, and rendering illustrations and animations with Adobe
+            PS,
+            Illustrator, AfterEffects and too many more to mention.</p>
+        </div>
+      </div>
+      <div class="white-section">
+        <h2>Personal Projects</h2>
+        <br>
+        <p>I've developed a number of personal "side" projects over the years, including an Etsy store, creating and
+          selling masks, interior design projects and some drawing and painting in my spare time. It brings me great
+          joy and satisfaction to devise an idea, then bring it to life (and if people like my designs as much as I
+          do, its an added bonus!). Feel free to peep my Etsy store if its something that might interest you.
+        </p>
+        <div class="button-container">
+          <a href="https://janejeffreysco.etsy.com" class="etsy-button">My Etsy Store</a>
+        </div>
+      </div>
+      <div class="grey-section2">
+        <div class="white-box6">
+          <div class="image-box">
+            <img src="Images/Etsy.png" alt="etsy" class="etsy">
+            <div class="image-caption">Etsy Store</div>
+          </div>
+          <div class="image-box">
+            <img src="Images/masks.jpg" alt="masks" class="masks">
+            <div class="image-caption">Masks Collection</div>
+          </div>
+          <div class="image-box">
+            <img src="Images/interior.png" alt="interior" class="interior">
+            <div class="image-caption">Interior Design</div>
+          </div>
+          <div class="image-box">
+            <img src="Images/Drawings.png" alt="drawings" class="drawings">
+            <div class="image-caption">Artistic Drawings</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grey-section3">
+        <div class="white-box7">
+          <div class="contact-info">
+            <h2>Contact</h2>
+            <br>
+            <p>I'm always looking for new and exciting opportunities.</p>
+            <p>Let's connect.</p>
+          </div>
+          <div class="contact-info">
+            <div class="icon-wrapper">
+              <a href="https://www.linkedin.com/in/sarah-taylor-80700969" target="_blank">
+                <img src="Images/LinkedIn.png" alt="linkedin" class="linkedin">
+              </a>
+              <a href="https://janejeffreysco.etsy.com" target="_blank">
+                <img src="Images/Etsy_Icon.png" alt="etsyIcon" class="etsy-icon">
+              </a>
+            </div>
+            <p>sarahjjt8@gmail.com</p>
+            <p>0419 772 818</p>
+          </div>
+        </div>
+        <div class="white-box8">
+          <div class="download-cv">
+            <a href="SJJTaylor_CV.pdf" download class="download-button">Download CV</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <!----------------------------------------------- CONTACT OVERLAY --------------------------------------------->
+  <div id="ContactOverlay" class="contact-overlay" style="display: none;">
+    <div class="contact-content">
+      <button onclick="closeContactOverlay()" class="close-button">X</button>
+
+      <div class="grey-section1">
+        <h2>Let's get in touch</h2>
+        <br>
+        <p>I'm always looking for new and exciting opportunities.</p>
+        <p>Let's connect.</p>
+        <div class="icon-wrapper">
+          <a href="https://www.linkedin.com/in/sarah-taylor-80700969" target="_blank">
+            <img src="Images/LinkedIn.png" alt="linkedin" class="linkedin">
+          </a>
+          <a href="https://janejeffreysco.etsy.com" target="_blank">
+            <img src="Images/Etsy_Icon.png" alt="etsyIcon" class="etsy-icon">
+          </a>
+        </div>
+        <p>sarahjjt8@gmail.com</p>
+        <p>0419 772 818</p>
+        <div class="download-cv">
+          <a href="SJJTaylor_CV.pdf" download class="download-button">Download CV</a>
+        </div>
+
+
+
+        <section id="contact">
+          <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <div class="button-container1">
+              <button type="submit" class="submit-button">Send</button>
+            </div>
+          </form>
+        </section>
+
+        <!-- Custom Alert Message -->
+        <div id="alertMessage" class="alert-message">
+          <span id="alertText"></span>
+          <button id="closeAlert">✕</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+
+  <!----------------------------------------------- WEB DEVELOPMENT SECTION --------------------------------------------->
   <div id="webDevelopmentOverlay" class="web-development-overlay" style="display: none;">
     <div class="overlay-content">
       <div class="grey-section1">
@@ -260,7 +301,6 @@
       <div class="white-section">
         <h2>UX Research Methodology</h2>
       </div>
-      <!-- Ensure the image is positioned after the white-section -->
       <div class="background-image-container">
         <img src="Images/BackgroundImage.png" alt="BG Image" class="bg-image">
         <div class="white-boxes-above-bg">
@@ -413,11 +453,12 @@
     </div>
   </div>
 
-  <!-- New overlay for UX Design -->
+  <!----------------------------------------------- UX DESIGN OVERLAY --------------------------------------------->
   <div id="UXDesignOverlay" class="ux-design-overlay" style="display: none;">
     <div class="overlay-content">
 
       <img src="Images/RealTalkBanner.png" alt="realtalkbanner" class="real-talk-banner">
+      <button onclick="closeUXDesignOverlay()">X</button>
       <div class="white-section2">
         <div class="white-box1">
           <h3>The Problem
@@ -575,7 +616,7 @@
             individuals to engage in spontaneous challenges. </p>
 
           <br>
-<p>
+          <p>
             To address these concerns, actions were considered such as enhancing the standardization of back buttons,
             introducing a compelling incentive system (Feed), and ensuring button consistency. These measures aim to
             improve the overall usability and user satisfaction of the prototype, making it more engaging and effective
@@ -585,9 +626,36 @@
           <img src="Images/RealTalk_Wireframe.png" alt="realtalkwireframe" class="realtalk-wireframe">
         </div>
       </div>
+      <div class="grey-box11">
+        <h2>Prototype</h2>
+      </div>
+      <div class="grey-section7">
+        <div class="grey-box10">
+          <img src="Images/HomeScreen.png" alt="HomeScreen" class="home-screen">
+          <p>Landing Page</p>
+        </div>
+        <div class="grey-box10">
+          <img src="Images/Signup.png" alt="signup" class="signup">
+          <p>Signup</p>
+        </div>
+        <div class="grey-box10">
+          <img src="Images/StartDay.png" alt="StartDay" class="start-day">
+          <p>Start the Day</p>
+        </div>
 
-
-
+        <div class="grey-box10">
+          <img src="Images/MainScreen.png" alt="MainScreen" class="main-screen">
+          <p>Prompt Spinner</p>
+        </div>
+        <div class="grey-box10">
+          <img src="Images/PromptScreen.png" alt="PromptScreen" class="prompt-screen">
+          <p>Daily Prompt</p>
+        </div>
+        <div class="grey-box10">
+          <img src="Images/Notification.png" alt="Notification" class="notification">
+          <p>Prompt Notification</p>
+        </div>
+      </div>
     </div>
   </div>
 
