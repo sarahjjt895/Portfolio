@@ -1,13 +1,4 @@
-
-
-// Prevent form submission for demonstration purposes
-document.getElementById('contactForm').addEventListener('submit', function (event) {
-  event.preventDefault();
-  alert('Form submitted successfully!');
-});
-
-
-// WEB DEVELOPMENT OVERLAY FUNCTION
+//--------------------------------- WEB DEVELOPMENT OVERLAY FUNCTION ---------------------------------//
 function openWebDevelopmentOverlay() {
   // Show the Web Development overlay
   document.getElementById('webDevelopmentOverlay').style.display = 'flex';
@@ -26,14 +17,16 @@ webDevelopmentOverlay.addEventListener('click', function (e) {
 });
 
 
-// ABOUT ME OVERLAY FUNCTION
+//--------------------------------- ABOUT ME OVERLAY FUNCTION ---------------------------------//
+
+// Function to open the About Me overlay
 function openaboutMeOverlay() {
-  // Show the About Me  overlay
+  // Show the About Me overlay
   document.getElementById('aboutMeOverlay').style.display = 'flex';
 }
 
+// Function to close the About Me overlay
 function closeaboutMeOverlay() {
-  // Close the About Me overlay
   document.getElementById('aboutMeOverlay').style.display = 'none';
 }
 
@@ -44,8 +37,30 @@ aboutMeOverlay.addEventListener('click', function (e) {
   }
 });
 
+//--------------------------------- CONTACT OVERLAY FUNCTION ---------------------------------//
 
-// UX DESIGN OVERLAY FUNCTION
+
+// Function to open the About Me overlay
+function openContactOverlay() {
+  // Show the Contact overlay
+  document.getElementById('ContactOverlay').style.display = 'flex';
+}
+
+// Function to close the About Me overlay
+function closeContactOverlay() {
+  document.getElementById('ContactOverlay').style.display = 'none';
+}
+
+// Close the overlay if clicked outside the content
+ContactOverlay.addEventListener('click', function (e) {
+  if (e.target === ContactOverlay) {
+    closeContactOverlay();
+  }
+});
+
+
+// --------------------------------- UX DESIGN OVERLAY FUNCTION ------------------------------------ //
+
 function openUXDesignOverlay() {
   // Show the Web Development overlay
   document.getElementById('UXDesignOverlay').style.display = 'flex';
@@ -63,7 +78,7 @@ UXDesignOverlay.addEventListener('click', function (e) {
   }
 });
 
-
+// --------------------------------- BURGER MENU FUNCTION ------------------------------------ //
 // JavaScript to toggle visibility based on screen width
 window.addEventListener('resize', function () {
   var navBar = document.querySelector('.nav-bar');
@@ -123,6 +138,9 @@ document.addEventListener('keydown', function (event) {
   }
 });
 
+
+
+// --------------------------------- ANIMATIONS FUNCTION ------------------------------------ //
 // Function to handle intersection changes
 function handleIntersection(entries, observer) {
   entries.forEach(entry => {
@@ -145,7 +163,7 @@ elementsToObserve.forEach(element => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll('.wireframe1, .wireframe2, .wireframe3, .wireframe4, .wireframe5, .theme-1, .theme-2, .theme-3');
+  const images = document.querySelectorAll('.wireframe1, .wireframe2, .wireframe3, .wireframe4, .wireframe5, .theme-1, .theme-2, .theme-3, .grey-box10');
 
   // Function to handle intersection changes
   function handleIntersection(entries, observer) {
@@ -192,3 +210,53 @@ document.addEventListener("DOMContentLoaded", function () {
   observer.observe(aboutMeImage);
 });
 
+
+
+// --------------------------------- CONTACT FORM FUNCTION ------------------------------------ //
+// Initialize EmailJS with your User ID
+emailjs.init("3r9WxT3uzuWHABOZT");
+
+// Function to show success message
+function showSuccessMessage(message) {
+  var alertMessage = document.getElementById('alertMessage');
+  var alertText = document.getElementById('alertText');
+  alertText.textContent = message;
+  alertMessage.style.display = 'block';
+
+  // Close button functionality
+  var closeButton = document.getElementById('closeAlert');
+  closeButton.addEventListener('click', function() {
+    alertMessage.style.display = 'none';
+  });
+}
+
+// Function to show error message
+function showErrorMessage(message) {
+  var alertMessage = document.getElementById('alertMessage');
+  var alertText = document.getElementById('alertText');
+  alertText.textContent = message;
+  alertMessage.style.display = 'block';
+
+  // Close button functionality
+  var closeButton = document.getElementById('closeAlert');
+  closeButton.addEventListener('click', function() {
+    alertMessage.style.display = 'none';
+  });
+}
+
+// Add event listener to the form for submission
+document.getElementById('contactForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Prevent the form from submitting the default way
+
+  // Send the form data using EmailJS
+  emailjs.sendForm('service_e5jhbqn', 'template_l0otc2h', this)
+    .then(function(response) {
+      console.log('SUCCESS!', response.status, response.text);
+      showSuccessMessage('Your message has been sent!');
+      // Clear the form fields after successful submission
+      document.getElementById('contactForm').reset();
+    }, function(error) {
+      console.log('FAILED...', error);
+      showErrorMessage('Sorry, there was an issue sending your message. Please try again later.');
+    });
+});
