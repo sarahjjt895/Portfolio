@@ -2771,6 +2771,51 @@ margin-bottom:5%;
 .sketches {
   width:100%;
 }
+.animation-overlay .grey-section3 {
+  background-color: rgb(225, 225, 225);
+  width:100%;
+  padding: 5% 10%;
+  align-items: center;
+  text-align: left;
+  padding-right:30%;
+}
+
+.animation-overlay .grey-section4 {
+  background-color: rgb(225, 225, 225);
+  width:100%;
+  height: calc(100% - 60px);
+  /* Adjust height to end before the bottom */
+  /* Center items horizontally */
+  margin: 0 auto;
+  /* Auto margin to center horizontally */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  /* Space between the two boxes */
+  padding: 0 10%;
+  padding-bottom:5%;
+  /* Add padding to the left and right */
+  justify-content: flex-start; /* Align items at the top */
+  gap:5%;
+}
+
+.animation-overlay .grey-box4 {
+  background-color: rgb(225, 225, 225);
+  /* Adjust padding as needed */
+  width: 80%;
+  /* Optional: Add shadow for better visibility */
+  text-align: left;
+  /* Center text horizontally */
+  box-sizing: border-box;
+  display: flex;
+  /* Use flexbox for container */
+  flex-direction: column;
+  /* Stack items vertically */
+  justify-content: space-between;
+  /* Space evenly between items */
+  justify-content: flex-start; /* Align items at the top */
+  height: auto;
+}
 /*----------------------------------------- MEDIA QUERIES ----------------------------------------- */
 /* Media query for screens less than 1600px */
 @media (min-width: 1500px) {
