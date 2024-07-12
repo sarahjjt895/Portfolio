@@ -62,12 +62,12 @@ ContactOverlay.addEventListener('click', function (e) {
 // --------------------------------- UX DESIGN OVERLAY FUNCTION ------------------------------------ //
 
 function openUXDesignOverlay() {
-  // Show the Web Development overlay
+  // Show the UXDesign overlay
   document.getElementById('UXDesignOverlay').style.display = 'flex';
 }
 
 function closeUXDesignOverlay() {
-  // Close the Web Development overlay
+  // Close the UXDesign overlay
   document.getElementById('UXDesignOverlay').style.display = 'none';
 }
 
@@ -75,6 +75,25 @@ function closeUXDesignOverlay() {
 UXDesignOverlay.addEventListener('click', function (e) {
   if (e.target === UXDesignOverlay) {
     closeUXDesignOverlay();
+  }
+});
+
+// --------------------------------- 3D ANIMATION OVERLAY FUNCTION ------------------------------------ //
+
+function openAnimationOverlay() {
+  // Show the Animationt overlay
+  document.getElementById('AnimationOverlay').style.display = 'flex';
+}
+
+function closeAnimationOverlay() {
+  // Close the Animation overlay
+  document.getElementById('AnimationOverlay').style.display = 'none';
+}
+
+// Close the overlay if clicked outside the content
+AnimationOverlay.addEventListener('click', function (e) {
+  if (e.target === AnimationOverlay) {
+    closeAnimationOverlay();
   }
 });
 
