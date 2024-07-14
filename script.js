@@ -97,6 +97,25 @@ AnimationOverlay.addEventListener('click', function (e) {
   }
 });
 
+// --------------------------------- VISUAL COMMUNICATION OVERLAY FUNCTION ------------------------------------ //
+
+function openViscomOverlay() {
+  // Show the Animationt overlay
+  document.getElementById('ViscomOverlay').style.display = 'flex';
+}
+
+function closeViscomOverlay() {
+  // Close the Animation overlay
+  document.getElementById('ViscomOverlay').style.display = 'none';
+}
+
+// Close the overlay if clicked outside the content
+ViscomOverlay.addEventListener('click', function (e) {
+  if (e.target === ViscomOverlay) {
+    closeViscomOverlay();
+  }
+});
+
 // --------------------------------- BURGER MENU FUNCTION ------------------------------------ //
 // JavaScript to toggle visibility based on screen width
 window.addEventListener('resize', function () {
@@ -176,13 +195,13 @@ const observer = new IntersectionObserver(handleIntersection, {
 });
 
 // Observe the .data-model and .runwise-prototype1 elements
-const elementsToObserve = document.querySelectorAll('.data-model, .runwise-prototype1, .runwise-prototype2, .runwise-prototype3, .statistic-1,.statistic-2,.statistic-3');
+const elementsToObserve = document.querySelectorAll('.data-model, .runwise-prototype1, .runwise-prototype2, .runwise-prototype3, .statistic-1,.statistic-2,.statistic-3, .bumble, .pigeon-project');
 elementsToObserve.forEach(element => {
   observer.observe(element);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll('.wireframe1, .wireframe2, .wireframe3, .wireframe4, .wireframe5, .theme-1, .theme-2, .theme-3, .grey-box10');
+  const images = document.querySelectorAll('.wireframe1, .wireframe2, .wireframe3, .wireframe4, .wireframe5, .theme-1, .theme-2, .theme-3, .grey-box10, .left1, .left2, .left3, .left4, .right1, .right2, .right3, .infograph1, .infograph2, .infograph3');
 
   // Function to handle intersection changes
   function handleIntersection(entries, observer) {
@@ -279,3 +298,4 @@ document.getElementById('contactForm').addEventListener('submit', function(event
       showErrorMessage('Sorry, there was an issue sending your message. Please try again later.');
     });
 });
+
