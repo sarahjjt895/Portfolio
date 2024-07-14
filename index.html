@@ -54,8 +54,10 @@
   <!----------------------------------------------- HOME SECTION --------------------------------------------->
   <section id="home">
     <h2>Welcome</h2>
-    <p>Hello! I'm Sarah, a front-end developer with a passion for transforming data into cutting-edge, impeccably
-      crafted interfaces. Originally from Tilpa, a small sheep and cattle farm town (in the middle of nowhere), I
+    <p>Hello! I'm Sarah, a front-end developer with a passion for transforming data and information into cutting-edge,
+      impeccably
+      crafted interfaces - like the one you're looking at now, which I programmed from scratch! Originally from Tilpa, a
+      small sheep and cattle farm town (in the middle of nowhere), I
       eventually made my way to the beautiful city of Sydney, where I've lived for the past 10 years.</p>
   </section>
 
@@ -82,7 +84,7 @@
       </div>
       <div class="gallery-item">
         <img src="Images/Image4.jpg" alt="Artwork 4">
-        <div class="overlay">
+        <div class="overlay" onclick="openViscomOverlay()">
           <p class="overlay-text">Visual Communication</p>
         </div>
       </div>
@@ -700,7 +702,7 @@
 
       <div class="grey-section9">
         <h2>Launch Video</h2>
-        <video src="Videos/RealTalkVideo.mp4" controls width="700" height="500">
+        <video class="responsive-video" src="Videos/RealTalkVideo.mp4" controls width="700" height="500">
           Your browser does not support the video tag.
         </video>
       </div>
@@ -877,32 +879,166 @@
       </div>
       <div class="grey-section4">
         <div class="grey-box4">
+          <img src="Images/CruiserLogin.png" alt="CruiserLogin" class="cruiser-login">
+          <p> Login / Signup</p>
+        </div>
+        <div class="grey-box4">
+          <img src="Images/CruiserSignup.png" alt="CruiserSignup" class="cruiser-signup">
+          <p>Signup</p>
+        </div>
+        <div class="grey-box4">
+          <img src="Images/CruiserHome.png" alt="CruiserHome" class="cruiser-home">
+          <p>Home</p>
+        </div>
+        <div class="grey-box4">
+          <img src="Images/CruiserFind.png" alt="CruiserFind" class="cruiser-find">
+          <p>Find a Cruise</p>
+        </div>
+        <div class="grey-box4">
+          <img src="Images/CruiserLoading.png" alt="CruiserLoading" class="cruiser-loading">
+          <p>Loading</p>
+        </div>
+        <div class="grey-box4">
+          <img src="Images/CruiserSmoothRoads.png" alt="CruiserSmoothRoads" class="cruiser-smooth-roads">
+          <p>Smooth Roads</p>
+        </div>
+      </div>
+
+      <div class="grey-section4">
+        <div class="grey-box4">
+          <img src="Images/CruiserFriends.png" alt="CruiserFriends" class="cruiser-friends">
+          <p>Friends</p>
+        </div>
+        <div class="grey-box4">
+          <img src="Images/CruiserFriendsDetail.png" alt="CruiserFriendsDetail" class="cruiser-friends-detail">
+          <p>Friends (detailed)</p>
+        </div>
+        <div class="grey-box4">
+          <img src="Images/CruiserShop.png" alt="CruiserShop" class="cruiser-shop">
+          <p>Shop</p>
+        </div>
+        <div class="grey-box4">
+          <img src="Images/CruiserShopSub.png" alt="CruiserShopSub" class="cruiser-shop-sub">
+          <p>Shop (sub-category)</p>
+        </div>
+        <div class="grey-box4">
+          <img src="Images/CruiserSearch.png" alt="CruiserSearch" class="cruiser-search">
+          <p>Search</p>
+        </div>
+        <div class="grey-box4">
+          <img src="Images/CruiserSettings.png" alt="CruiserSettings" class="cruiser-settings">
+          <p>Settings</p>
+        </div>
+      </div>
+      <div class="white-section3">
+        <h2>Animation & Transition Development</h2>
+      </div>
+      <div class="white-section4">
+        <div class="white-box5">
+          <img src="Images/CruiserAnimation1.png" alt="CruiserAnimation1" class="cruiser-animation1">
+          <img src="Images/CruiserAnimation2.png" alt="CruiserAnimation2" class="cruiser-animation2">
+        </div>
+        <div class="white-box6">
+          <img src="Images/CruiserAnimation3.png" alt="CruiserAnimation3" class="cruiser-animation3">
+        </div>
+      </div>
+      <div class="white-section3">
+        <h2>Brand Guideline</h2>
+      </div>
+      <div class="white-section5">
+        <div class="white-box7">
+          <img src="Images/Left1.png" alt="left1" class="left1">
+          <img src="Images/Left2.png" alt="left2" class="left2">
+          <img src="Images/Left3.png" alt="left3" class="left3">
 
         </div>
-        <div class="grey-box4">
-          
+        <div class="white-box8">
+          <img src="Images/Right1.png" alt="right1" class="right1">
+          <img src="Images/Right2.png" alt="right2" class="right2">
+          <img src="Images/Right3.png" alt="right3" class="right4">
+          <img src="Images/Left4.png" alt="left4" class="left4">
         </div>
-        <div class="grey-box4">
-          
+      </div>
+
+
+
+      <div class="grey-section5">
+        <div class="grey-box5">
+          <h2> Video Prototype</h2>
         </div>
-        <div class="grey-box4">
-          
-        </div>
-        <div class="grey-box4">
-          
-        </div>
-        <div class="grey-box4">
-          
+        <div class="grey-box5">
+          <video src="Videos/Cruiser.mp4" controls width="300" height="700">
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </div>
+  </div>
+  <!----------------------------------------------- VISUAL COMMUNICATION SECTION --------------------------------------------->
+  <div id="ViscomOverlay" class="viscom-overlay" style="display: none;">
+    <div class="overlay-content">
+      <button onclick="closeViscomOverlay()">X</button>
+      <div class="white-section1">
+        <h2>Visual Communication</h2>
+      </div>
+      <div class="white-section">
+        <div class="white-box1">
+          <h3>Annotated Design Critique</h3>
+          <p>For this project, I analyzed and critiqued two advertisements based on their visual communication
+            effectiveness. The first advertisement I reviewed was "The Pigeon Project," which I found to have weak
+            advertising. I identified and annotated various elements that contributed to its unclear messaging and
+            background story.</p>
+        </div>
+        <div class="white-box2">
+          <img src="Images/PigeonProject.png" alt="pigeonproject" class="pigeon-project">
+        </div>
+      </div>
+      <div class="white-section">
+        <div class="white-box3">
+          <img src="Images/Bumble.png" alt="bumble" class="bumble">
+        </div>
+        <div class="white-box4">
+          <p>
+            In contrast, the second advertisement I analyzed was for Bumble. I found this ad to exhibit strong visual
+            communication. I provided detailed annotations explaining how effective use of imagery, text placement, and
+            color schemes contributed to its clarity and impact.</p>
+        </div>
+      </div>
+      <div class="grey-section">
+        <div class="grey-box1">
+          <h2>Infographs</h2>
+          <br>
+          <p>These three infographs were developed in response to a critical analysis on the impact of social media
+            algorithms on digital citizenship and privacy rights. Using theoretical concepts (ideas, interests and
+            institutions), depicting my analysis visually and mapping the key stakeholders.</p>
+          <br>
+          <img src="Images/Infograph1.png" alt="infograph1" class="infograph1">
+        </div>
+        <div class="grey-box1">
+          <img src="Images/Infograph2.png" alt="infograph2" class="infograph2">
+        </div>
+        <div class="grey-box1">
+          <img src="Images/Infograph3.png" alt="infograph3" class="infograph3">
+        </div>
+      </div>
+      <div class="grey-section1">
+        <div class="white-box5">
+          <p>
+            Social media platforms, like Facebook, Twitter, Instagram, and YouTube, employ complex algorithms to curate
+            content in users' feeds, significantly influencing the way individuals engage with digital information and
+            interact in the online world.</p>
+        </div>
 
-    <!----------------------------------------------- FOOTER SECTION --------------------------------------------->
-    <footer>
-      <p>&copy; 2024 Sarah JJ Taylor. All rights reserved.</p>
-    </footer>
+      </div>
+    </div>
+  </div>
 
-    <script src="script.js"></script>
+  <!----------------------------------------------- FOOTER SECTION --------------------------------------------->
+  <footer>
+    <p>&copy; 2024 Sarah JJ Taylor. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 
 </html>
