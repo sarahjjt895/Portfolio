@@ -3105,15 +3105,14 @@ align-items:center;
 }
 
 .pigeon-project {
-  width:45%;
+  width:100%;
   opacity: 0;
-  transform: translateX(60%);
+  transform: translateX(15%);
   /* Start off-screen to the left */
   transition: opacity 1.3s ease-out, transform 1.3s ease-out;
   z-index: 1;
-  position: absolute;
+  position: relative;
   /* Make sure it’s positioned absolutely if needed */
-  left: 45%;
   /* This will stop the image at 40% from the left side */
 }
 
@@ -3124,17 +3123,17 @@ align-items:center;
 }
 
 .bumble {
-  width:45%;
+  width:100%;
   opacity: 0;
-  transform: translateX(-50%);
+  transform: translateX(-20%);
   /* Start off-screen to the left */
   transition: opacity 1.3s ease-out, transform 1.3s ease-out;
   z-index: 1;
-  position:absolute;
+  position:relative;
   /* Make sure it’s positioned absolutely if needed */
-  right: 45%;
+  right: 3%;
   /* This will stop the image at 40% from the left side */
- margin-top:40%;
+
 }
 
 .bumble.in-view {
@@ -3192,7 +3191,7 @@ margin-bottom:2%;
   justify-content: center;
   height: auto;
   /* Allow height to adjust based on content */
-  margin-bottom:60%;
+margin-bottom:5%;
 }
 
 .viscom-overlay .white-box4 {
