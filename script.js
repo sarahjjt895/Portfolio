@@ -201,7 +201,7 @@ elementsToObserve.forEach(element => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll('.wireframe1, .wireframe2, .wireframe3, .wireframe4, .wireframe5, .theme-1, .theme-2, .theme-3, .grey-box10, .left1, .left2, .left3, .left4, .right1, .right2, .right3, .infograph1, .infograph2, .infograph3');
+  const images = document.querySelectorAll('.wireframe1, .wireframe2, .wireframe3, .wireframe4, .wireframe5, .theme-1, .theme-2, .theme-3, .grey-box10, .left1, .left2, .left3, .left4, .right1, .right2, .right3, .infograph1, .infograph2, .infograph3, .CTA1, .CTA2, .CTA3, .CTA4');
 
   // Function to handle intersection changes
   function handleIntersection(entries, observer) {
