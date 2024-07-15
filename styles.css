@@ -3050,9 +3050,15 @@ margin-top:32px;
   /* Relative positioning for absolute button */
   overflow-x: hidden;
 }
+.viscom-overlay .white-section1 {
+  padding-top:5%;
+  padding-bottom:5%;
+  background-color: rgb(225, 225, 225);
+  margin:3%;
+}
 .viscom-overlay .white-section1 h2{
   text-align:center;
-  margin-top:5%;
+
 }
 .viscom-overlay p {
   font-family: 'Roboto', sans-serif;
@@ -3133,7 +3139,6 @@ align-items:center;
   /* Make sure it’s positioned absolutely if needed */
   right: 3%;
   /* This will stop the image at 40% from the left side */
-
 }
 
 .bumble.in-view {
@@ -3161,8 +3166,6 @@ align-items:center;
   justify-content: space-between;
   /* Space evenly between items */
   justify-content: center;
-
-  /* Allow height to adjust based on content */
 }
 
 .image {
@@ -3287,6 +3290,109 @@ box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8p
   width: 50%;
   padding: 3%;
   text-align: justify;
+}
+
+.viscom-overlay .grey-section2 {
+  background-color: rgb(225, 225, 225);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 5%;
+}
+
+.viscom-overlay .grey-section2 h2 {
+  text-align: center;
+  margin-bottom: 3%;
+}
+
+.timescape {
+  width: 80%;
+  margin-bottom:3%;
+}
+
+.viscom-overlay .white-box6 {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+  width: 50%;
+  padding: 3%;
+  margin: auto; /* Center horizontally */
+  text-align: justify;
+  display: flex;
+}
+.viscom-overlay .white-section2 {
+  background-color: white;
+  width:80%;
+  align-items: center;
+  margin: auto; /* Center horizontally */
+}
+
+.viscom-overlay .white-section2 h2 {
+  text-align:center;
+  margin:0;
+  margin-bottom:3%;
+}
+
+.viscom-overlay .white-section2 p {
+  text-align: center;
+}
+
+.viscom-overlay .white-section3 {
+  background-color: white;
+  width:100%;
+  height: calc(100% - 60px);
+  /* Adjust height to end before the bottom */
+  /* Center items horizontally */
+  margin: 0 auto;
+  /* Auto margin to center horizontally */
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  /* Space between the two boxes */
+  padding-top:5%;
+  /* Add padding to the left and right */
+align-items:center;
+}
+
+.viscom-overlay .white-box7 {
+background-color: white;
+/* Adjust padding as needed */
+width: 50%;
+/* Optional: Add shadow for better visibility */
+text-align: left;
+/* Center text horizontally */
+box-sizing: border-box;
+display: flex;
+/* Use flexbox for container */
+flex-direction: column;
+/* Stack items vertically */
+justify-content: space-between;
+/* Space evenly between items */
+justify-content: center;
+height: auto;
+}
+
+.viscom-overlay .white-box7 img {
+  margin:3%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+}
+
+.CTA1,
+.CTA2,
+.CTA3,
+.CTA4 {
+  opacity: 0;
+  /* Initially hidden */
+  transition: opacity 1s ease-in;
+}
+
+.CTA1.fade-in, 
+.CTA2.fade-in, 
+.CTA3.fade-in,
+.CTA4.fade-in{
+  opacity: 1;
+  /* Fade in */
 }
 /*----------------------------------------- MEDIA QUERIES ----------------------------------------- */
 /* Media query for screens less than 1600px */
@@ -4118,5 +4224,40 @@ width:120%;
 .animation-overlay video {
 width:200px;
 height:450px;
+}
+
+  /*----------------------------------------- VISCOM OVERLAY ----------------------------------------- */
+.viscom-overlay .white-section,
+.viscom-overlay .white-box1,
+.viscom-overlay .white-box2,
+.viscom-overlay .white-box3,
+.viscom-overlay .white-box4,
+.viscom-overlay .grey-section,
+.viscom-overlay .grey-box1,
+.viscom-overlay .grey-section1,
+.viscom-overlay .white-box5,
+.viscom-overlay .white-section2,
+.viscom-overlay .white-section3
+ {
+  width: 100%;
+  /* Adjust width for smaller screens */
+  /* Max width is full width */
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 0;
+  padding: 5%;
+  gap:5%;
+}
+.viscom-overlay .grey-section img {
+  width:90%;
+}
+
+.viscom-overlay .white-box6,
+.viscom-overlay .white-box7 {
+  width:90%;
+}
+
+.viscom-overlay .white-box7 {
+  margin-left:5%;
 }
 }
